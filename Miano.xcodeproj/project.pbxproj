@@ -53,6 +53,7 @@
 		45D880DC2A262B7600555693 /* InstrumentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880DB2A262B7600555693 /* InstrumentModel.swift */; };
 		45D880DE2A26350000555693 /* InstrumentsSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880DD2A26350000555693 /* InstrumentsSidebar.swift */; };
 		45D880E02A26352B00555693 /* InstrumentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880DF2A26352B00555693 /* InstrumentDetail.swift */; };
+		45D880E32A263B5C00555693 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880E22A263B5C00555693 /* View+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +119,7 @@
 		45D880DB2A262B7600555693 /* InstrumentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentModel.swift; sourceTree = "<group>"; };
 		45D880DD2A26350000555693 /* InstrumentsSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentsSidebar.swift; sourceTree = "<group>"; };
 		45D880DF2A26352B00555693 /* InstrumentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentDetail.swift; sourceTree = "<group>"; };
+		45D880E22A263B5C00555693 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,16 +159,10 @@
 			isa = PBXGroup;
 			children = (
 				45D880462A25B9AB00555693 /* MianoApp.swift */,
-				45D880DA2A262B6500555693 /* Models */,
 				45D880D42A26283900555693 /* MainApp */,
-				45D880C92A261A1200555693 /* MiniSectrogram */,
-				45D880B62A26079500555693 /* SharedComponents */,
-				45D880C12A26148500555693 /* MidiPlayer */,
-				45D880BC2A260FCB00555693 /* VocalTrack */,
-				45D880B12A26075000555693 /* NoiseGenerator */,
-				45D880A92A25F76500555693 /* MiniTuner */,
-				45D880802A25E79700555693 /* MiniDrum */,
-				45D8807E2A25E6CF00555693 /* MiniKeyboard */,
+				45D880E42A263BB000555693 /* Instruments */,
+				45D880E12A263B5200555693 /* Extensions */,
+				45D880DA2A262B6500555693 /* Models */,
 				45D8804A2A25B9AC00555693 /* Assets.xcassets */,
 				45D8804F2A25B9AC00555693 /* Miano.entitlements */,
 				45D8804C2A25B9AC00555693 /* Preview Content */,
@@ -364,6 +360,29 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		45D880E12A263B5200555693 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				45D880E22A263B5C00555693 /* View+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		45D880E42A263BB000555693 /* Instruments */ = {
+			isa = PBXGroup;
+			children = (
+				45D880C92A261A1200555693 /* MiniSectrogram */,
+				45D880B62A26079500555693 /* SharedComponents */,
+				45D880C12A26148500555693 /* MidiPlayer */,
+				45D880BC2A260FCB00555693 /* VocalTrack */,
+				45D880B12A26075000555693 /* NoiseGenerator */,
+				45D880A92A25F76500555693 /* MiniTuner */,
+				45D880802A25E79700555693 /* MiniDrum */,
+				45D8807E2A25E6CF00555693 /* MiniKeyboard */,
+			);
+			path = Instruments;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -468,6 +487,7 @@
 			files = (
 				45D880B32A26076E00555693 /* NoiseGenerator.swift in Sources */,
 				45D880B52A26077B00555693 /* NoiseGeneratorsConductor.swift in Sources */,
+				45D880E32A263B5C00555693 /* View+Extensions.swift in Sources */,
 				45D880CF2A261A8200555693 /* MelSpectrogram.swift in Sources */,
 				45D8807C2A25D62500555693 /* SmallKnob.swift in Sources */,
 				45D880B02A25F83900555693 /* MiniTuner.swift in Sources */,

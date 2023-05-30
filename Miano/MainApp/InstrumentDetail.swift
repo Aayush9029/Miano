@@ -11,13 +11,12 @@ struct InstrumentDetailView: View {
     let instrument: InstrumentModel
 
     var body: some View {
-        ScrollView(.vertical) {
+        ScrollView(.vertical, showsIndicators: false) {
             ZStack(alignment: .bottomLeading) {
                 Image(instrument.image)
                     .resizable()
                     .scaledToFill()
                     .cornerRadius(12)
-                    .padding()
 
                 Text(instrument.emoji)
                     .padding(12)
@@ -39,7 +38,6 @@ struct InstrumentDetailView: View {
                     .background(.ultraThinMaterial)
                     .cornerRadius(12)
             }
-            .padding(.horizontal)
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(instrument.tags, id: \.self) { tag in
@@ -56,12 +54,12 @@ struct InstrumentDetailView: View {
                             )
                     }
                 }
-                .padding(.vertical, 4)
-                .padding(.horizontal)
-                .padding(.leading, 4)
+                .padding(4)
             }
+            .padding(.bottom)
         }
-        .padding(.bottom)
+        .roundedCorners(radius: 12, corners: .top)
+        .padding([.horizontal, .top])
         .background(.black)
     }
 }
