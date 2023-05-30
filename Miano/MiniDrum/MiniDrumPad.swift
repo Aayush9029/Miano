@@ -38,7 +38,7 @@ struct MiniDrumPad: View {
                 }
         }
         .ignoresSafeArea()
-        .frame(minWidth: 360, maxWidth: 512, minHeight: 280, maxHeight: 460)
+        .frame(minWidth: 360, minHeight: 280)
     }
 }
 

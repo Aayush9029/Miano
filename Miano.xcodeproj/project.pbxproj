@@ -36,6 +36,9 @@
 		45D880A52A25ECE600555693 /* bass_drum_C1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45D880912A25EBA400555693 /* bass_drum_C1.wav */; };
 		45D880A62A25ECE600555693 /* Piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45D880932A25EBA400555693 /* Piano.mp3 */; };
 		45D880A82A25EFF300555693 /* SingleDrumPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880A72A25EFF300555693 /* SingleDrumPad.swift */; };
+		45D880AB2A25F7E000555693 /* TunerConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880AA2A25F7E000555693 /* TunerConductor.swift */; };
+		45D880AE2A25F81B00555693 /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 45D880AD2A25F81B00555693 /* SoundpipeAudioKit */; };
+		45D880B02A25F83900555693 /* MiniTuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880AF2A25F83900555693 /* MiniTuner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +87,8 @@
 		45D880952A25EBA400555693 /* Counting.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Counting.mp3; sourceTree = "<group>"; };
 		45D880962A25EBA400555693 /* snare_D1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = snare_D1.wav; sourceTree = "<group>"; };
 		45D880A72A25EFF300555693 /* SingleDrumPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDrumPad.swift; sourceTree = "<group>"; };
+		45D880AA2A25F7E000555693 /* TunerConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerConductor.swift; sourceTree = "<group>"; };
+		45D880AF2A25F83900555693 /* MiniTuner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniTuner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45D8805D2A25BE7D00555693 /* AudioKit in Frameworks */,
+				45D880AE2A25F81B00555693 /* SoundpipeAudioKit in Frameworks */,
 				45D880852A25EAA300555693 /* AudioKitEX in Frameworks */,
 				45D880752A25C0F700555693 /* AudioKitUI in Frameworks */,
 				45D880582A25BAD700555693 /* Keyboard in Frameworks */,
@@ -122,7 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				45D880462A25B9AB00555693 /* MianoApp.swift */,
-				45D880802A25E79700555693 /* Drums */,
+				45D880A92A25F76500555693 /* MiniTuner */,
+				45D880802A25E79700555693 /* MiniDrum */,
 				45D8807E2A25E6CF00555693 /* MiniKeyboard */,
 				45D8804A2A25B9AC00555693 /* Assets.xcassets */,
 				45D8804F2A25B9AC00555693 /* Miano.entitlements */,
@@ -200,13 +207,13 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		45D880802A25E79700555693 /* Drums */ = {
+		45D880802A25E79700555693 /* MiniDrum */ = {
 			isa = PBXGroup;
 			children = (
 				45D880812A25EA8600555693 /* MiniDrumPad.swift */,
 				45D880A72A25EFF300555693 /* SingleDrumPad.swift */,
 			);
-			path = Drums;
+			path = MiniDrum;
 			sourceTree = "<group>";
 		};
 		45D880862A25EBA400555693 /* Samples */ = {
@@ -232,6 +239,15 @@
 			path = Samples;
 			sourceTree = "<group>";
 		};
+		45D880A92A25F76500555693 /* MiniTuner */ = {
+			isa = PBXGroup;
+			children = (
+				45D880AF2A25F83900555693 /* MiniTuner.swift */,
+				45D880AA2A25F7E000555693 /* TunerConductor.swift */,
+			);
+			path = MiniTuner;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -253,6 +269,7 @@
 				45D8805C2A25BE7D00555693 /* AudioKit */,
 				45D880742A25C0F700555693 /* AudioKitUI */,
 				45D880842A25EAA300555693 /* AudioKitEX */,
+				45D880AD2A25F81B00555693 /* SoundpipeAudioKit */,
 			);
 			productName = Miano;
 			productReference = 45D880432A25B9AB00555693 /* Miano.app */;
@@ -287,6 +304,7 @@
 				45D8805B2A25BE7D00555693 /* XCRemoteSwiftPackageReference "AudioKit" */,
 				45D880732A25C0F700555693 /* XCRemoteSwiftPackageReference "AudioKitUI" */,
 				45D880832A25EAA300555693 /* XCRemoteSwiftPackageReference "AudioKitEX" */,
+				45D880AC2A25F81B00555693 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */,
 			);
 			productRefGroup = 45D880442A25B9AB00555693 /* Products */;
 			projectDirPath = "";
@@ -331,11 +349,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				45D8807C2A25D62500555693 /* SmallKnob.swift in Sources */,
+				45D880B02A25F83900555693 /* MiniTuner.swift in Sources */,
 				45D880492A25B9AB00555693 /* MiniKeyboard.swift in Sources */,
 				45D8807A2A25C20E00555693 /* EXSConductor.swift in Sources */,
 				45D880772A25C19A00555693 /* CustomKeys.swift in Sources */,
 				45D880A82A25EFF300555693 /* SingleDrumPad.swift in Sources */,
 				45D880822A25EA8600555693 /* MiniDrumPad.swift in Sources */,
+				45D880AB2A25F7E000555693 /* TunerConductor.swift in Sources */,
 				45D880472A25B9AB00555693 /* MianoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,7 +490,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© Aayush Pokharel 2023";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Required to visualize, process and record audio input.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -497,7 +518,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© Aayush Pokharel 2023";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Required to visualize, process and record audio input.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -566,6 +588,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		45D880AC2A25F81B00555693 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/SoundpipeAudioKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -588,6 +618,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 45D880832A25EAA300555693 /* XCRemoteSwiftPackageReference "AudioKitEX" */;
 			productName = AudioKitEX;
+		};
+		45D880AD2A25F81B00555693 /* SoundpipeAudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45D880AC2A25F81B00555693 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */;
+			productName = SoundpipeAudioKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
