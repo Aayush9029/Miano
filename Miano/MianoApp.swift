@@ -11,7 +11,7 @@ import SwiftUI
 struct MianoApp: App {
     var body: some Scene {
         WindowGroup {
-            MiniTuner()
+            NoiseGenerator()
         }
 
         .windowStyle(.hiddenTitleBar)

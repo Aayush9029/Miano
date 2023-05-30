@@ -15,14 +15,16 @@ public struct SmallKnob: View {
 
     var backgroundColor: Color = .white
     var foregroundColor: Color = .black.opacity(0.5)
+    var strokeColor: Color = .white.opacity(0.25)
 
     /// Initialize the knob with a bound value and range
     /// - Parameters:
     ///   - value: value being controlled
     ///   - range: range of the value
-    public init(value: Binding<Float>, range: ClosedRange<Float> = 0.0 ... 1.0) {
+    public init(value: Binding<Float>, range: ClosedRange<Float> = 0.0 ... 1.0, strokeColor: Color = .white.opacity(0.125)) {
         _value = value
         self.range = range
+        self.strokeColor = strokeColor
     }
 
     var normalizedValue: Double {
@@ -48,7 +50,7 @@ public struct SmallKnob: View {
                     .clipShape(Circle())
                     .overlay(
                         Circle()
-                            .stroke(.white.opacity(0.125), lineWidth: 2)
+                            .stroke(strokeColor, lineWidth: 2)
                     )
                     .padding(2)
 

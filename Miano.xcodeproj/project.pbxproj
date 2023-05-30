@@ -39,6 +39,8 @@
 		45D880AB2A25F7E000555693 /* TunerConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880AA2A25F7E000555693 /* TunerConductor.swift */; };
 		45D880AE2A25F81B00555693 /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 45D880AD2A25F81B00555693 /* SoundpipeAudioKit */; };
 		45D880B02A25F83900555693 /* MiniTuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880AF2A25F83900555693 /* MiniTuner.swift */; };
+		45D880B32A26076E00555693 /* NoiseGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880B22A26076E00555693 /* NoiseGenerator.swift */; };
+		45D880B52A26077B00555693 /* NoiseGeneratorsConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880B42A26077B00555693 /* NoiseGeneratorsConductor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +91,8 @@
 		45D880A72A25EFF300555693 /* SingleDrumPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDrumPad.swift; sourceTree = "<group>"; };
 		45D880AA2A25F7E000555693 /* TunerConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerConductor.swift; sourceTree = "<group>"; };
 		45D880AF2A25F83900555693 /* MiniTuner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniTuner.swift; sourceTree = "<group>"; };
+		45D880B22A26076E00555693 /* NoiseGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseGenerator.swift; sourceTree = "<group>"; };
+		45D880B42A26077B00555693 /* NoiseGeneratorsConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseGeneratorsConductor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				45D880462A25B9AB00555693 /* MianoApp.swift */,
+				45D880B62A26079500555693 /* SharedComponents */,
+				45D880B12A26075000555693 /* NoiseGenerator */,
 				45D880A92A25F76500555693 /* MiniTuner */,
 				45D880802A25E79700555693 /* MiniDrum */,
 				45D8807E2A25E6CF00555693 /* MiniKeyboard */,
@@ -202,7 +208,6 @@
 			children = (
 				45D880482A25B9AB00555693 /* MiniKeyboard.swift */,
 				45D880762A25C19A00555693 /* CustomKeys.swift */,
-				45D8807B2A25D62500555693 /* SmallKnob.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -246,6 +251,23 @@
 				45D880AA2A25F7E000555693 /* TunerConductor.swift */,
 			);
 			path = MiniTuner;
+			sourceTree = "<group>";
+		};
+		45D880B12A26075000555693 /* NoiseGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				45D880B22A26076E00555693 /* NoiseGenerator.swift */,
+				45D880B42A26077B00555693 /* NoiseGeneratorsConductor.swift */,
+			);
+			path = NoiseGenerator;
+			sourceTree = "<group>";
+		};
+		45D880B62A26079500555693 /* SharedComponents */ = {
+			isa = PBXGroup;
+			children = (
+				45D8807B2A25D62500555693 /* SmallKnob.swift */,
+			);
+			path = SharedComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,6 +370,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45D880B32A26076E00555693 /* NoiseGenerator.swift in Sources */,
+				45D880B52A26077B00555693 /* NoiseGeneratorsConductor.swift in Sources */,
 				45D8807C2A25D62500555693 /* SmallKnob.swift in Sources */,
 				45D880B02A25F83900555693 /* MiniTuner.swift in Sources */,
 				45D880492A25B9AB00555693 /* MiniKeyboard.swift in Sources */,
