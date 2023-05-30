@@ -11,6 +11,11 @@
 		45D880492A25B9AB00555693 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880482A25B9AB00555693 /* ContentView.swift */; };
 		45D8804B2A25B9AC00555693 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45D8804A2A25B9AC00555693 /* Assets.xcassets */; };
 		45D8804E2A25B9AC00555693 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45D8804D2A25B9AC00555693 /* Preview Assets.xcassets */; };
+		45D880582A25BAD700555693 /* Keyboard in Frameworks */ = {isa = PBXBuildFile; productRef = 45D880572A25BAD700555693 /* Keyboard */; };
+		45D8805D2A25BE7D00555693 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 45D8805C2A25BE7D00555693 /* AudioKit */; };
+		45D880752A25C0F700555693 /* AudioKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = 45D880742A25C0F700555693 /* AudioKitUI */; };
+		45D880772A25C19A00555693 /* MiniKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880762A25C19A00555693 /* MiniKeyboard.swift */; };
+		45D8807A2A25C20E00555693 /* EXSConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880792A25C20E00555693 /* EXSConductor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +25,26 @@
 		45D8804A2A25B9AC00555693 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45D8804D2A25B9AC00555693 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		45D8804F2A25B9AC00555693 /* Miano.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Miano.entitlements; sourceTree = "<group>"; };
+		45D880602A25BF8400555693 /* noise-wht2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "noise-wht2.wav"; sourceTree = "<group>"; };
+		45D880612A25BF8400555693 /* saw220.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = saw220.wav; sourceTree = "<group>"; };
+		45D880622A25BF8400555693 /* sqr220.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sqr220.wav; sourceTree = "<group>"; };
+		45D880632A25BF8400555693 /* saw220-ana1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "saw220-ana1.wav"; sourceTree = "<group>"; };
+		45D880642A25BF8400555693 /* cheeb-hat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "cheeb-hat.wav"; sourceTree = "<group>"; };
+		45D880652A25BF8400555693 /* cheeb-stick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "cheeb-stick.wav"; sourceTree = "<group>"; };
+		45D880662A25BF8400555693 /* sqr.SFZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = sqr.SFZ; sourceTree = "<group>"; };
+		45D880672A25BF8400555693 /* cheeb-ch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "cheeb-ch.wav"; sourceTree = "<group>"; };
+		45D880682A25BF8400555693 /* closed_hi_hat_F#1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "closed_hi_hat_F#1.wav"; sourceTree = "<group>"; };
+		45D880692A25BF8400555693 /* cheeb-bd.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "cheeb-bd.wav"; sourceTree = "<group>"; };
+		45D8806B2A25BF8400555693 /* sawPiano1.exs */ = {isa = PBXFileReference; lastKnownFileType = file; path = sawPiano1.exs; sourceTree = "<group>"; };
+		45D8806C2A25BF8400555693 /* funkyWow.exs */ = {isa = PBXFileReference; lastKnownFileType = file; path = funkyWow.exs; sourceTree = "<group>"; };
+		45D8806D2A25BF8400555693 /* noisyRez.exs */ = {isa = PBXFileReference; lastKnownFileType = file; path = noisyRez.exs; sourceTree = "<group>"; };
+		45D8806E2A25BF8400555693 /* sawPad1.exs */ = {isa = PBXFileReference; lastKnownFileType = file; path = sawPad1.exs; sourceTree = "<group>"; };
+		45D8806F2A25BF8400555693 /* sqrTone1.exs */ = {isa = PBXFileReference; lastKnownFileType = file; path = sqrTone1.exs; sourceTree = "<group>"; };
+		45D880702A25BF8400555693 /* nes-syn1.exs */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nes-syn1.exs"; sourceTree = "<group>"; };
+		45D880712A25BF8400555693 /* drumSimp.exs */ = {isa = PBXFileReference; lastKnownFileType = file; path = drumSimp.exs; sourceTree = "<group>"; };
+		45D880722A25BF8400555693 /* cheeb-snr.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "cheeb-snr.wav"; sourceTree = "<group>"; };
+		45D880762A25C19A00555693 /* MiniKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniKeyboard.swift; sourceTree = "<group>"; };
+		45D880792A25C20E00555693 /* EXSConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXSConductor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +52,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45D8805D2A25BE7D00555693 /* AudioKit in Frameworks */,
+				45D880752A25C0F700555693 /* AudioKitUI in Frameworks */,
+				45D880582A25BAD700555693 /* Keyboard in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +64,7 @@
 		45D8803A2A25B9AB00555693 = {
 			isa = PBXGroup;
 			children = (
+				45D8805E2A25BF8400555693 /* Sounds */,
 				45D880452A25B9AB00555693 /* Miano */,
 				45D880442A25B9AB00555693 /* Products */,
 			);
@@ -54,6 +83,8 @@
 			children = (
 				45D880462A25B9AB00555693 /* MianoApp.swift */,
 				45D880482A25B9AB00555693 /* ContentView.swift */,
+				45D880782A25C20100555693 /* KeyboardKit */,
+				45D880552A25B9BA00555693 /* KeyboardUI */,
 				45D8804A2A25B9AC00555693 /* Assets.xcassets */,
 				45D8804F2A25B9AC00555693 /* Miano.entitlements */,
 				45D8804C2A25B9AC00555693 /* Preview Content */,
@@ -67,6 +98,63 @@
 				45D8804D2A25B9AC00555693 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		45D880552A25B9BA00555693 /* KeyboardUI */ = {
+			isa = PBXGroup;
+			children = (
+				45D880762A25C19A00555693 /* MiniKeyboard.swift */,
+			);
+			path = KeyboardUI;
+			sourceTree = "<group>";
+		};
+		45D8805E2A25BF8400555693 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				45D8805F2A25BF8400555693 /* basicSamples */,
+				45D880642A25BF8400555693 /* cheeb-hat.wav */,
+				45D880652A25BF8400555693 /* cheeb-stick.wav */,
+				45D880662A25BF8400555693 /* sqr.SFZ */,
+				45D880672A25BF8400555693 /* cheeb-ch.wav */,
+				45D880682A25BF8400555693 /* closed_hi_hat_F#1.wav */,
+				45D880692A25BF8400555693 /* cheeb-bd.wav */,
+				45D8806A2A25BF8400555693 /* Sampler Instruments */,
+				45D880722A25BF8400555693 /* cheeb-snr.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		45D8805F2A25BF8400555693 /* basicSamples */ = {
+			isa = PBXGroup;
+			children = (
+				45D880602A25BF8400555693 /* noise-wht2.wav */,
+				45D880612A25BF8400555693 /* saw220.wav */,
+				45D880622A25BF8400555693 /* sqr220.wav */,
+				45D880632A25BF8400555693 /* saw220-ana1.wav */,
+			);
+			path = basicSamples;
+			sourceTree = "<group>";
+		};
+		45D8806A2A25BF8400555693 /* Sampler Instruments */ = {
+			isa = PBXGroup;
+			children = (
+				45D8806B2A25BF8400555693 /* sawPiano1.exs */,
+				45D8806C2A25BF8400555693 /* funkyWow.exs */,
+				45D8806D2A25BF8400555693 /* noisyRez.exs */,
+				45D8806E2A25BF8400555693 /* sawPad1.exs */,
+				45D8806F2A25BF8400555693 /* sqrTone1.exs */,
+				45D880702A25BF8400555693 /* nes-syn1.exs */,
+				45D880712A25BF8400555693 /* drumSimp.exs */,
+			);
+			path = "Sampler Instruments";
+			sourceTree = "<group>";
+		};
+		45D880782A25C20100555693 /* KeyboardKit */ = {
+			isa = PBXGroup;
+			children = (
+				45D880792A25C20E00555693 /* EXSConductor.swift */,
+			);
+			path = KeyboardKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +173,11 @@
 			dependencies = (
 			);
 			name = Miano;
+			packageProductDependencies = (
+				45D880572A25BAD700555693 /* Keyboard */,
+				45D8805C2A25BE7D00555693 /* AudioKit */,
+				45D880742A25C0F700555693 /* AudioKitUI */,
+			);
 			productName = Miano;
 			productReference = 45D880432A25B9AB00555693 /* Miano.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +206,11 @@
 				Base,
 			);
 			mainGroup = 45D8803A2A25B9AB00555693;
+			packageReferences = (
+				45D880562A25BAD700555693 /* XCRemoteSwiftPackageReference "Keyboard" */,
+				45D8805B2A25BE7D00555693 /* XCRemoteSwiftPackageReference "AudioKit" */,
+				45D880732A25C0F700555693 /* XCRemoteSwiftPackageReference "AudioKitUI" */,
+			);
 			productRefGroup = 45D880442A25B9AB00555693 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,6 +238,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				45D880492A25B9AB00555693 /* ContentView.swift in Sources */,
+				45D8807A2A25C20E00555693 /* EXSConductor.swift in Sources */,
+				45D880772A25C19A00555693 /* MiniKeyboard.swift in Sources */,
 				45D880472A25B9AB00555693 /* MianoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +436,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		45D880562A25BAD700555693 /* XCRemoteSwiftPackageReference "Keyboard" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/Keyboard.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		45D8805B2A25BE7D00555693 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		45D880732A25C0F700555693 /* XCRemoteSwiftPackageReference "AudioKitUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKitUI/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		45D880572A25BAD700555693 /* Keyboard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45D880562A25BAD700555693 /* XCRemoteSwiftPackageReference "Keyboard" */;
+			productName = Keyboard;
+		};
+		45D8805C2A25BE7D00555693 /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45D8805B2A25BE7D00555693 /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
+		45D880742A25C0F700555693 /* AudioKitUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45D880732A25C0F700555693 /* XCRemoteSwiftPackageReference "AudioKitUI" */;
+			productName = AudioKitUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 45D8803B2A25B9AB00555693 /* Project object */;
 }

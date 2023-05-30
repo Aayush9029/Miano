@@ -12,6 +12,8 @@ struct MianoApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .ignoresSafeArea()
         }
+        .windowStyle(.hiddenTitleBar)
     }
 }
