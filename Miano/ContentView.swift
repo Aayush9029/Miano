@@ -13,7 +13,8 @@ import SwiftUI
 import Tonic
 
 struct ContentView: View {
-    @State private var pitch: Float = 0.25
+    @State private var pitch: Int = 0 // pitch * 8 = lowest note
+    @State private var amplitude: Float = 0.25
     @StateObject var conductor: InstrumentEXSConductor = .init()
     var body: some View {
         VStack {
@@ -48,15 +49,15 @@ struct ContentView: View {
                 Spacer()
 
                 HStack {
-                    SmallKnob(value: $pitch)
+                    SmallKnob(value: $amplitude)
                         .frame(width: 60)
                         .shadow(radius: 12, y: 10)
 
-                    SmallKnob(value: $pitch)
+                    SmallKnob(value: $amplitude)
                         .frame(width: 60)
                         .shadow(radius: 12, y: 10)
 
-                    SmallKnob(value: $pitch)
+                    SmallKnob(value: $amplitude)
                         .frame(width: 60)
                         .shadow(radius: 12, y: 10)
                 }
@@ -88,8 +89,13 @@ struct ContentView: View {
                     }
                     .frame(width: 12)
                     .padding()
-                    .background(.white)
+                    .background(pitch < 9 ? .white : .white.opacity(0.5))
 
+                    .onTapGesture {
+                        if pitch < 9 {
+                            pitch += 1
+                        }
+                    }
                     Divider().frame(width: 12)
                     VStack {
                         Spacer()
@@ -101,7 +107,12 @@ struct ContentView: View {
                     }
                     .frame(width: 12)
                     .padding()
-                    .background(.white)
+                    .background(pitch > 0 ? .white : .white.opacity(0.5))
+                    .onTapGesture {
+                        if pitch > 0 {
+                            pitch -= 1
+                        }
+                    }
                 }
                 .labelStyle(.iconOnly)
                 .cornerRadius(12)
@@ -109,7 +120,10 @@ struct ContentView: View {
                     RoundedRectangle(cornerRadius: 12)
                         .stroke(.gray, lineWidth: 2)
                 )
-                MiniKeyboard()
+                MiniKeyboard(customPitch: $pitch)
+                    .onChange(of: pitch, perform: { newValue in
+                        print(newValue)
+                    })
 //                Rectangle()
 //                    .fill(.white)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
@@ -120,7 +134,7 @@ struct ContentView: View {
                     .shadow(radius: 8, y: 4)
                     .environmentObject(conductor)
             }
-            .frame(height: 200)
+            .frame(minHeight: 80, maxHeight: 200)
         }
         .padding()
         .background(.gray)

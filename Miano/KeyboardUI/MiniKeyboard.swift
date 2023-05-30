@@ -15,10 +15,14 @@ import Tonic
 struct MiniKeyboard: View {
     @EnvironmentObject var conductor: InstrumentEXSConductor
 
-    @State var octaveRange = 1
+    @State var octaveRange = 0
     @State var layoutType = 0
 
-    @State var lowestNote = 48
+    @Binding var customPitch: Int
+    var lowestNote: Int {
+        customPitch * 12
+    }
+
     var hightestNote: Int {
         (octaveRange + 1) * 12 + lowestNote
     }
@@ -45,7 +49,7 @@ struct MiniKeyboard: View {
 
 struct MiniKeyboard_Previews: PreviewProvider {
     static var previews: some View {
-        MiniKeyboard()
+        MiniKeyboard(customPitch: .constant(6))
             .environmentObject(InstrumentEXSConductor())
     }
 }
