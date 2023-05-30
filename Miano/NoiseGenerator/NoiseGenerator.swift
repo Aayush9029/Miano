@@ -27,6 +27,7 @@ struct NoiseGenerator: View {
                         .font(.caption)
                         .foregroundColor(.white.opacity(0.5))
                 }
+                .padding(.vertical)
 
                 Spacer()
 

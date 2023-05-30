@@ -43,6 +43,16 @@
 		45D880B52A26077B00555693 /* NoiseGeneratorsConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880B42A26077B00555693 /* NoiseGeneratorsConductor.swift */; };
 		45D880BE2A260FD900555693 /* VocalTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880BD2A260FD900555693 /* VocalTrack.swift */; };
 		45D880C02A26103C00555693 /* VocalTractConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880BF2A26103C00555693 /* VocalTractConductor.swift */; };
+		45D880C72A2614DF00555693 /* Demo.mid in Resources */ = {isa = PBXBuildFile; fileRef = 45D880C52A2614B800555693 /* Demo.mid */; };
+		45D880C82A2614DF00555693 /* 4tracks.mid in Resources */ = {isa = PBXBuildFile; fileRef = 45D880C62A2614B800555693 /* 4tracks.mid */; };
+		45D880CB2A261A3400555693 /* SpectrogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880CA2A261A3400555693 /* SpectrogramView.swift */; };
+		45D880CF2A261A8200555693 /* MelSpectrogram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880CC2A261A8200555693 /* MelSpectrogram.swift */; };
+		45D880D02A261A8200555693 /* AudioSpectrogram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880CE2A261A8200555693 /* AudioSpectrogram.swift */; };
+		45D880D12A261A8200555693 /* AudioSpectrogram+AVCaptureAudioDataOutputSampleBufferDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880CD2A261A8200555693 /* AudioSpectrogram+AVCaptureAudioDataOutputSampleBufferDelegate.swift */; };
+		45D880D92A262A0B00555693 /* InstrumentSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880D82A262A0B00555693 /* InstrumentSelection.swift */; };
+		45D880DC2A262B7600555693 /* InstrumentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880DB2A262B7600555693 /* InstrumentModel.swift */; };
+		45D880DE2A26350000555693 /* InstrumentsSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880DD2A26350000555693 /* InstrumentsSidebar.swift */; };
+		45D880E02A26352B00555693 /* InstrumentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880DF2A26352B00555693 /* InstrumentDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +107,17 @@
 		45D880B42A26077B00555693 /* NoiseGeneratorsConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseGeneratorsConductor.swift; sourceTree = "<group>"; };
 		45D880BD2A260FD900555693 /* VocalTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocalTrack.swift; sourceTree = "<group>"; };
 		45D880BF2A26103C00555693 /* VocalTractConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocalTractConductor.swift; sourceTree = "<group>"; };
+		45D880C22A26149100555693 /* MidiPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiPlayer.swift; sourceTree = "<group>"; };
+		45D880C52A2614B800555693 /* Demo.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = Demo.mid; sourceTree = "<group>"; };
+		45D880C62A2614B800555693 /* 4tracks.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = 4tracks.mid; sourceTree = "<group>"; };
+		45D880CA2A261A3400555693 /* SpectrogramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrogramView.swift; sourceTree = "<group>"; };
+		45D880CC2A261A8200555693 /* MelSpectrogram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelSpectrogram.swift; sourceTree = "<group>"; };
+		45D880CD2A261A8200555693 /* AudioSpectrogram+AVCaptureAudioDataOutputSampleBufferDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioSpectrogram+AVCaptureAudioDataOutputSampleBufferDelegate.swift"; sourceTree = "<group>"; };
+		45D880CE2A261A8200555693 /* AudioSpectrogram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSpectrogram.swift; sourceTree = "<group>"; };
+		45D880D82A262A0B00555693 /* InstrumentSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentSelection.swift; sourceTree = "<group>"; };
+		45D880DB2A262B7600555693 /* InstrumentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentModel.swift; sourceTree = "<group>"; };
+		45D880DD2A26350000555693 /* InstrumentsSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentsSidebar.swift; sourceTree = "<group>"; };
+		45D880DF2A26352B00555693 /* InstrumentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +157,11 @@
 			isa = PBXGroup;
 			children = (
 				45D880462A25B9AB00555693 /* MianoApp.swift */,
+				45D880DA2A262B6500555693 /* Models */,
+				45D880D42A26283900555693 /* MainApp */,
+				45D880C92A261A1200555693 /* MiniSectrogram */,
 				45D880B62A26079500555693 /* SharedComponents */,
+				45D880C12A26148500555693 /* MidiPlayer */,
 				45D880BC2A260FCB00555693 /* VocalTrack */,
 				45D880B12A26075000555693 /* NoiseGenerator */,
 				45D880A92A25F76500555693 /* MiniTuner */,
@@ -160,6 +185,7 @@
 		45D8805E2A25BF8400555693 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				45D880C42A2614B800555693 /* MIDI Files */,
 				45D880862A25EBA400555693 /* Samples */,
 				45D8805F2A25BF8400555693 /* basicSamples */,
 				45D880642A25BF8400555693 /* cheeb-hat.wav */,
@@ -284,6 +310,60 @@
 			path = VocalTrack;
 			sourceTree = "<group>";
 		};
+		45D880C12A26148500555693 /* MidiPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				45D880C22A26149100555693 /* MidiPlayer.swift */,
+			);
+			path = MidiPlayer;
+			sourceTree = "<group>";
+		};
+		45D880C42A2614B800555693 /* MIDI Files */ = {
+			isa = PBXGroup;
+			children = (
+				45D880C52A2614B800555693 /* Demo.mid */,
+				45D880C62A2614B800555693 /* 4tracks.mid */,
+			);
+			path = "MIDI Files";
+			sourceTree = "<group>";
+		};
+		45D880C92A261A1200555693 /* MiniSectrogram */ = {
+			isa = PBXGroup;
+			children = (
+				45D880CA2A261A3400555693 /* SpectrogramView.swift */,
+				45D880D32A261B8E00555693 /* SpectrogramKit */,
+			);
+			path = MiniSectrogram;
+			sourceTree = "<group>";
+		};
+		45D880D32A261B8E00555693 /* SpectrogramKit */ = {
+			isa = PBXGroup;
+			children = (
+				45D880CE2A261A8200555693 /* AudioSpectrogram.swift */,
+				45D880CD2A261A8200555693 /* AudioSpectrogram+AVCaptureAudioDataOutputSampleBufferDelegate.swift */,
+				45D880CC2A261A8200555693 /* MelSpectrogram.swift */,
+			);
+			path = SpectrogramKit;
+			sourceTree = "<group>";
+		};
+		45D880D42A26283900555693 /* MainApp */ = {
+			isa = PBXGroup;
+			children = (
+				45D880D82A262A0B00555693 /* InstrumentSelection.swift */,
+				45D880DF2A26352B00555693 /* InstrumentDetail.swift */,
+				45D880DD2A26350000555693 /* InstrumentsSidebar.swift */,
+			);
+			path = MainApp;
+			sourceTree = "<group>";
+		};
+		45D880DA2A262B6500555693 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				45D880DB2A262B7600555693 /* InstrumentModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -367,9 +447,11 @@
 				45D8809C2A25ECE600555693 /* Guitar.mp3 in Resources */,
 				45D880A32A25ECE600555693 /* Synth.mp3 in Resources */,
 				45D880A02A25ECE600555693 /* alphabet.mp3 in Resources */,
+				45D880C82A2614DF00555693 /* 4tracks.mid in Resources */,
 				45D8809F2A25ECE600555693 /* hi_tom_D2.wav in Resources */,
 				45D880A62A25ECE600555693 /* Piano.mp3 in Resources */,
 				45D880A52A25ECE600555693 /* bass_drum_C1.wav in Resources */,
+				45D880C72A2614DF00555693 /* Demo.mid in Resources */,
 				45D880972A25ECE600555693 /* Strings.mp3 in Resources */,
 				45D880A22A25ECE600555693 /* Bass Synth.mp3 in Resources */,
 				45D8809A2A25ECE600555693 /* snare_D1.wav in Resources */,
@@ -386,17 +468,25 @@
 			files = (
 				45D880B32A26076E00555693 /* NoiseGenerator.swift in Sources */,
 				45D880B52A26077B00555693 /* NoiseGeneratorsConductor.swift in Sources */,
+				45D880CF2A261A8200555693 /* MelSpectrogram.swift in Sources */,
 				45D8807C2A25D62500555693 /* SmallKnob.swift in Sources */,
 				45D880B02A25F83900555693 /* MiniTuner.swift in Sources */,
+				45D880DE2A26350000555693 /* InstrumentsSidebar.swift in Sources */,
 				45D880492A25B9AB00555693 /* MiniKeyboard.swift in Sources */,
 				45D8807A2A25C20E00555693 /* EXSConductor.swift in Sources */,
 				45D880772A25C19A00555693 /* CustomKeys.swift in Sources */,
 				45D880A82A25EFF300555693 /* SingleDrumPad.swift in Sources */,
+				45D880CB2A261A3400555693 /* SpectrogramView.swift in Sources */,
+				45D880D02A261A8200555693 /* AudioSpectrogram.swift in Sources */,
+				45D880D12A261A8200555693 /* AudioSpectrogram+AVCaptureAudioDataOutputSampleBufferDelegate.swift in Sources */,
 				45D880C02A26103C00555693 /* VocalTractConductor.swift in Sources */,
 				45D880822A25EA8600555693 /* MiniDrumPad.swift in Sources */,
+				45D880E02A26352B00555693 /* InstrumentDetail.swift in Sources */,
 				45D880BE2A260FD900555693 /* VocalTrack.swift in Sources */,
 				45D880AB2A25F7E000555693 /* TunerConductor.swift in Sources */,
 				45D880472A25B9AB00555693 /* MianoApp.swift in Sources */,
+				45D880DC2A262B7600555693 /* InstrumentModel.swift in Sources */,
+				45D880D92A262A0B00555693 /* InstrumentSelection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
