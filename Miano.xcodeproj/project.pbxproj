@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		45D880472A25B9AB00555693 /* MianoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880462A25B9AB00555693 /* MianoApp.swift */; };
 		45D880492A25B9AB00555693 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880482A25B9AB00555693 /* ContentView.swift */; };
-		45D8804B2A25B9AC00555693 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45D8804A2A25B9AC00555693 /* Assets.xcassets */; };
 		45D8804E2A25B9AC00555693 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45D8804D2A25B9AC00555693 /* Preview Assets.xcassets */; };
 		45D880582A25BAD700555693 /* Keyboard in Frameworks */ = {isa = PBXBuildFile; productRef = 45D880572A25BAD700555693 /* Keyboard */; };
 		45D8805D2A25BE7D00555693 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 45D8805C2A25BE7D00555693 /* AudioKit */; };
@@ -17,6 +16,7 @@
 		45D880772A25C19A00555693 /* MiniKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880762A25C19A00555693 /* MiniKeyboard.swift */; };
 		45D8807A2A25C20E00555693 /* EXSConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880792A25C20E00555693 /* EXSConductor.swift */; };
 		45D8807C2A25D62500555693 /* SmallKnob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D8807B2A25D62500555693 /* SmallKnob.swift */; };
+		45D8807D2A25DAC600555693 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45D8804A2A25B9AC00555693 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -228,8 +228,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45D8807D2A25DAC600555693 /* Assets.xcassets in Resources */,
 				45D8804E2A25B9AC00555693 /* Preview Assets.xcassets in Resources */,
-				45D8804B2A25B9AC00555693 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

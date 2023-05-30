@@ -13,7 +13,10 @@ struct MianoApp: App {
         WindowGroup {
             ContentView()
                 .ignoresSafeArea()
+                .frame(maxWidth: 720, maxHeight: 280)
         }
+
         .windowStyle(.hiddenTitleBar)
+        .windowResizability(.contentSize)
     }
 }
