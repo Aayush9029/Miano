@@ -11,9 +11,7 @@ import SwiftUI
 struct MianoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .ignoresSafeArea()
-                .frame(maxWidth: 720, maxHeight: 280)
+            MiniDrumPad()
         }
 
         .windowStyle(.hiddenTitleBar)

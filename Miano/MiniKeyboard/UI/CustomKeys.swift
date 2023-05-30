@@ -1,5 +1,5 @@
 //
-//  MiniKeyboard.swift
+//  CustomKeys.swift
 //  Miano
 //
 //  Created by Aayush Pokharel on 2023-05-30.
@@ -12,7 +12,7 @@ import Keyboard
 import SwiftUI
 import Tonic
 
-struct MiniKeyboard: View {
+struct CustomKeys: View {
     @EnvironmentObject var conductor: InstrumentEXSConductor
 
     @State var octaveRange = 0
@@ -47,9 +47,9 @@ struct MiniKeyboard: View {
     }
 }
 
-struct MiniKeyboard_Previews: PreviewProvider {
+struct CustomKeys_Previews: PreviewProvider {
     static var previews: some View {
-        MiniKeyboard(
+        CustomKeys(
             layoutType: .constant(1),
             customPitch: .constant(6)
         )

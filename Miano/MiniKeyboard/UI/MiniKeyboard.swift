@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MiniKeyboard.swift
 //  Miano
 //
 //  Created by Aayush Pokharel on 2023-05-30.
@@ -12,7 +12,7 @@ import Keyboard
 import SwiftUI
 import Tonic
 
-struct ContentView: View {
+struct MiniKeyboard: View {
     @State private var layoutType: Int = 0 // 0, 1, 2
     @State private var pitch: Int = 3 // pitch * 8 = lowest note
     @State private var amplitude: Float = 0.25
@@ -60,9 +60,6 @@ struct ContentView: View {
                         Color.blue.opacity(0.5)
                             .blendMode(.color)
                     })
-                    
-//                Rectangle()
-//                    .fill(.black)
                     .frame(width: 120, height: 80)
                     .cornerRadius(12)
                 
@@ -87,13 +84,12 @@ struct ContentView: View {
                         .stroke(.gray, lineWidth: 2)
                 )
                 
-                MiniKeyboard(
+                CustomKeys(
                     layoutType: $layoutType,
                     customPitch: $pitch
                 )
                 .background(.gray)
-//                Rectangle()
-//                    .fill(.white)
+                
                 .clipShape(RoundedRectangle(cornerRadius: 12))
                 .overlay(
                     RoundedRectangle(cornerRadius: 12)
@@ -110,6 +106,8 @@ struct ContentView: View {
                 .fill(.shadow(.inner(color: .white.opacity(0.25), radius: 32)))
                 .foregroundColor(.black)
         )
+        .ignoresSafeArea()
+        .frame(maxWidth: 720, maxHeight: 280)
     }
 }
     
@@ -154,19 +152,6 @@ struct KeyboardLayoutChanger: View {
         }
         .buttonStyle(.plain)
         .keyboardShortcut(shortcutKey, modifiers: .command)
-    }
-}
-    
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-            .cornerRadius(16)
-            .overlay(
-                RoundedRectangle(cornerRadius: 16)
-                    .stroke(.black, lineWidth: 2)
-            )
-            .environmentObject(InstrumentEXSConductor())
-            .padding()
     }
 }
     
@@ -226,5 +211,18 @@ struct PitchButton: View {
         }
         .disabled(!inRange)
         .buttonStyle(.plain)
+    }
+}
+
+struct MiniKeyboard_Previews: PreviewProvider {
+    static var previews: some View {
+        MiniKeyboard()
+            .cornerRadius(16)
+            .overlay(
+                RoundedRectangle(cornerRadius: 16)
+                    .stroke(.black, lineWidth: 2)
+            )
+            .environmentObject(InstrumentEXSConductor())
+            .padding()
     }
 }
