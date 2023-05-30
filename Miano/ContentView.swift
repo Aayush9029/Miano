@@ -13,6 +13,7 @@ import SwiftUI
 import Tonic
 
 struct ContentView: View {
+    @State private var layoutType: Int = 0 // 0, 1, 2
     @State private var pitch: Int = 0 // pitch * 8 = lowest note
     @State private var amplitude: Float = 0.25
     @StateObject var conductor: InstrumentEXSConductor = .init()
@@ -27,51 +28,44 @@ struct ContentView: View {
                             .font(.caption)
                     }
                     .foregroundColor(.black.opacity(0.5))
-
+                    
                     HStack {
-                        Circle()
-                            .frame(width: 6)
-                            .foregroundColor(.green)
-                            .shadow(color: .green, radius: 4)
+                        KeyboardLayoutChanger(0, binded: $layoutType, shortcutKey: "1")
                         Spacer()
-                        Circle()
-                            .frame(width: 6)
-                            .foregroundColor(.black.opacity(0.5))
+                        KeyboardLayoutChanger(1, binded: $layoutType, shortcutKey: "2")
                         Spacer()
-                        Circle()
-                            .frame(width: 6)
-                            .foregroundColor(.black.opacity(0.5))
+                        KeyboardLayoutChanger(2, binded: $layoutType, shortcutKey: "3")
                         Spacer()
                     }
                     .frame(width: 100)
                 }
-
+                
                 Spacer()
-
+                
                 HStack {
                     SmallKnob(value: $amplitude)
                         .frame(width: 60)
                         .shadow(radius: 12, y: 10)
-
+                    
                     SmallKnob(value: $amplitude)
                         .frame(width: 60)
                         .shadow(radius: 12, y: 10)
-
+                    
                     SmallKnob(value: $amplitude)
                         .frame(width: 60)
                         .shadow(radius: 12, y: 10)
                 }
-
-                NodeOutputView(conductor.instrument)
-//                    .overlay(content: {
-//                        Color.green
-//                            .blendMode(.color)
-//                    })
-//                Rectangle()
-//                    .fill(.black)
+                
+                //                NodeOutputView(conductor.instrument)
+                //                    .overlay(content: {
+                //                        Color.green
+                //                            .blendMode(.color)
+                //                    })
+                Rectangle()
+                    .fill(.black)
                     .frame(width: 120, height: 80)
                     .cornerRadius(12)
-
+                
                     .overlay(
                         RoundedRectangle(cornerRadius: 12)
                             .stroke(.white.opacity(0.5), lineWidth: 2)
@@ -80,39 +74,11 @@ struct ContentView: View {
             }
             HStack {
                 VStack(spacing: 0) {
-                    VStack {
-                        Spacer()
-                        Label("Increase Pitch", systemImage: "triangle.fill")
-
-                            .foregroundStyle(.gray)
-                        Spacer()
-                    }
-                    .frame(width: 12)
-                    .padding()
-                    .background(pitch < 9 ? .white : .white.opacity(0.5))
-
-                    .onTapGesture {
-                        if pitch < 9 {
-                            pitch += 1
-                        }
-                    }
+                    PitchButton(type: .increase, pitch: $pitch)
+                    
                     Divider().frame(width: 12)
-                    VStack {
-                        Spacer()
-                        Label("Decrease Pitch", systemImage: "arrowtriangle.down.fill")
-
-                            .foregroundStyle(.gray)
-
-                        Spacer()
-                    }
-                    .frame(width: 12)
-                    .padding()
-                    .background(pitch > 0 ? .white : .white.opacity(0.5))
-                    .onTapGesture {
-                        if pitch > 0 {
-                            pitch -= 1
-                        }
-                    }
+                    
+                    PitchButton(type: .decrease, pitch: $pitch)
                 }
                 .labelStyle(.iconOnly)
                 .cornerRadius(12)
@@ -120,12 +86,14 @@ struct ContentView: View {
                     RoundedRectangle(cornerRadius: 12)
                         .stroke(.gray, lineWidth: 2)
                 )
-                MiniKeyboard(customPitch: $pitch)
-                    .onChange(of: pitch, perform: { newValue in
-                        print(newValue)
-                    })
-//                Rectangle()
-//                    .fill(.white)
+                
+                //                MiniKeyboard(
+                //                    layoutType: $layoutType,
+                //                    customPitch: $pitch
+                //                )
+                //                .background(.black)
+                Rectangle()
+                    .fill(.white)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                     .overlay(
                         RoundedRectangle(cornerRadius: 12)
@@ -141,7 +109,38 @@ struct ContentView: View {
         .cornerRadius(12)
     }
 }
-
+    
+struct KeyboardLayoutChanger: View {
+    @Binding var layoutType: Int
+    let setLayout: Int
+    let shortcutKey: KeyEquivalent
+        
+    init(_ setLayout: Int, binded: Binding<Int>, shortcutKey: KeyEquivalent) {
+        self.setLayout = setLayout
+        self._layoutType = binded
+        self.shortcutKey = shortcutKey
+    }
+        
+    var body: some View {
+        Button {
+            layoutType = setLayout
+        } label: {
+            Circle()
+                .frame(width: 6)
+                .foregroundColor(
+                    layoutType == setLayout ? .green : .black.opacity(0.5)
+                )
+                .shadow(
+                    color: layoutType == setLayout ?
+                        .green : .black.opacity(0.125),
+                    radius: 4
+                )
+        }
+        .buttonStyle(.plain)
+        .keyboardShortcut(shortcutKey, modifiers: .command)
+    }
+}
+    
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
@@ -149,61 +148,62 @@ struct ContentView_Previews: PreviewProvider {
             .padding()
     }
 }
-
-import Controls
-
-/// Knob in which you start by tapping in its bound and change the value by either horizontal or vertical motion
-public struct SmallKnob: View {
-    @Binding var value: Float
-    var range: ClosedRange<Float> = 0.0 ... 1.0
-
-    var backgroundColor: Color = .white
-    var foregroundColor: Color = .black.opacity(0.5)
-
-    /// Initialize the knob with a bound value and range
-    /// - Parameters:
-    ///   - value: value being controlled
-    ///   - range: range of the value
-    public init(value: Binding<Float>, range: ClosedRange<Float> = 0.0 ... 1.0) {
-        _value = value
-        self.range = range
-    }
-
-    var normalizedValue: Double {
-        Double((value - range.lowerBound) / (range.upperBound - range.lowerBound))
-    }
-
-    public var body: some View {
-        Control(value: $value, in: range,
-                geometry: .twoDimensionalDrag(xSensitivity: 1, ySensitivity: 1))
-        { geo in
-            ZStack(alignment: .center) {
-                Ellipse().foregroundColor(backgroundColor)
-                Rectangle().foregroundColor(foregroundColor)
-                    .frame(width: geo.size.width / 20, height: geo.size.height / 4)
-                    .rotationEffect(Angle(radians: normalizedValue * 1.6 * .pi + 0.2 * .pi))
-                    .offset(x: -sin(normalizedValue * 1.6 * .pi + 0.2 * .pi) * geo.size.width / 2.0 * 0.75,
-                            y: cos(normalizedValue * 1.6 * .pi + 0.2 * .pi) * geo.size.height / 2.0 * 0.75)
-            }.drawingGroup() // Drawing groups improve antialiasing of rotated indicator
-        }
-        .aspectRatio(CGSize(width: 1, height: 1), contentMode: .fit)
-    }
+    
+enum PitchType {
+    case increase, decrease
 }
-
-public extension SmallKnob {
-    /// Modifier to change the background color of the knob
-    /// - Parameter backgroundColor: background color
-    func backgroundColor(_ backgroundColor: Color) -> SmallKnob {
-        var copy = self
-        copy.backgroundColor = backgroundColor
-        return copy
+    
+struct PitchButton: View {
+    let maxPitch = 9
+    let minPitch = -1
+    let type: PitchType
+    @Binding var pitch: Int
+        
+    var inRange: Bool {
+        if type == .decrease {
+            return pitch > minPitch
+        }
+        if type == .increase {
+            return pitch < maxPitch
+        }
+        return false
     }
-
-    /// Modifier to change the foreground color of the knob
-    /// - Parameter foregroundColor: foreground color
-    func foregroundColor(_ foregroundColor: Color) -> SmallKnob {
-        var copy = self
-        copy.foregroundColor = foregroundColor
-        return copy
+        
+    var body: some View {
+        Button {
+            if inRange {
+                if type == .increase {
+                    pitch += 1
+                }
+                if type == .decrease {
+                    pitch -= 1
+                }
+            }
+        } label: {
+            VStack {
+                Spacer()
+                Group {
+                    if type == .increase {
+                        Label(
+                            "Increase Pitch",
+                            systemImage: "triangle.fill"
+                        )
+                    } else {
+                        Label(
+                            "Decrease Pitch",
+                            systemImage: "arrowtriangle.down.fill"
+                        )
+                    }
+                }
+                .foregroundStyle(.gray)
+                    
+                Spacer()
+            }
+            .frame(width: 12)
+            .padding()
+            .background(inRange ? .white : .white.opacity(0.5))
+        }
+        .disabled(!inRange)
+        .buttonStyle(.plain)
     }
 }

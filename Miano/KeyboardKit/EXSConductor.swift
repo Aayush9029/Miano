@@ -14,13 +14,15 @@ import Tonic
 
 class InstrumentEXSConductor: ObservableObject, HasAudioEngine {
     let engine = AudioEngine()
-    var instrument = MIDISampler(name: "Instrument 2")
+    var instrument = MIDISampler(name: "Instrument 1")
 
     func noteOn(pitch: Pitch, point _: CGPoint) {
+        print("Playing \(pitch.midiNoteNumber)")
         instrument.play(noteNumber: MIDINoteNumber(pitch.midiNoteNumber), velocity: 90, channel: 0)
     }
 
     func noteOff(pitch: Pitch) {
+        print("Stopping \(pitch.midiNoteNumber)")
         instrument.stop(noteNumber: MIDINoteNumber(pitch.midiNoteNumber), channel: 0)
     }
 

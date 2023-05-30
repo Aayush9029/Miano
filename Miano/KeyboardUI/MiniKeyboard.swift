@@ -16,7 +16,7 @@ struct MiniKeyboard: View {
     @EnvironmentObject var conductor: InstrumentEXSConductor
 
     @State var octaveRange = 0
-    @State var layoutType = 0
+    @Binding var layoutType: Int
 
     @Binding var customPitch: Int
     var lowestNote: Int {
@@ -49,7 +49,10 @@ struct MiniKeyboard: View {
 
 struct MiniKeyboard_Previews: PreviewProvider {
     static var previews: some View {
-        MiniKeyboard(customPitch: .constant(6))
-            .environmentObject(InstrumentEXSConductor())
+        MiniKeyboard(
+            layoutType: .constant(1),
+            customPitch: .constant(6)
+        )
+        .environmentObject(InstrumentEXSConductor())
     }
 }

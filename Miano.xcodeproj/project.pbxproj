@@ -16,6 +16,7 @@
 		45D880752A25C0F700555693 /* AudioKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = 45D880742A25C0F700555693 /* AudioKitUI */; };
 		45D880772A25C19A00555693 /* MiniKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880762A25C19A00555693 /* MiniKeyboard.swift */; };
 		45D8807A2A25C20E00555693 /* EXSConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880792A25C20E00555693 /* EXSConductor.swift */; };
+		45D8807C2A25D62500555693 /* SmallKnob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D8807B2A25D62500555693 /* SmallKnob.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		45D880722A25BF8400555693 /* cheeb-snr.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "cheeb-snr.wav"; sourceTree = "<group>"; };
 		45D880762A25C19A00555693 /* MiniKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniKeyboard.swift; sourceTree = "<group>"; };
 		45D880792A25C20E00555693 /* EXSConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXSConductor.swift; sourceTree = "<group>"; };
+		45D8807B2A25D62500555693 /* SmallKnob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallKnob.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				45D880762A25C19A00555693 /* MiniKeyboard.swift */,
+				45D8807B2A25D62500555693 /* SmallKnob.swift */,
 			);
 			path = KeyboardUI;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45D8807C2A25D62500555693 /* SmallKnob.swift in Sources */,
 				45D880492A25B9AB00555693 /* ContentView.swift in Sources */,
 				45D8807A2A25C20E00555693 /* EXSConductor.swift in Sources */,
 				45D880772A25C19A00555693 /* MiniKeyboard.swift in Sources */,
