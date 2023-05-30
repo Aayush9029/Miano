@@ -41,6 +41,8 @@
 		45D880B02A25F83900555693 /* MiniTuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880AF2A25F83900555693 /* MiniTuner.swift */; };
 		45D880B32A26076E00555693 /* NoiseGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880B22A26076E00555693 /* NoiseGenerator.swift */; };
 		45D880B52A26077B00555693 /* NoiseGeneratorsConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880B42A26077B00555693 /* NoiseGeneratorsConductor.swift */; };
+		45D880BE2A260FD900555693 /* VocalTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880BD2A260FD900555693 /* VocalTrack.swift */; };
+		45D880C02A26103C00555693 /* VocalTractConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880BF2A26103C00555693 /* VocalTractConductor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +95,8 @@
 		45D880AF2A25F83900555693 /* MiniTuner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniTuner.swift; sourceTree = "<group>"; };
 		45D880B22A26076E00555693 /* NoiseGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseGenerator.swift; sourceTree = "<group>"; };
 		45D880B42A26077B00555693 /* NoiseGeneratorsConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseGeneratorsConductor.swift; sourceTree = "<group>"; };
+		45D880BD2A260FD900555693 /* VocalTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocalTrack.swift; sourceTree = "<group>"; };
+		45D880BF2A26103C00555693 /* VocalTractConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocalTractConductor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,7 @@
 			children = (
 				45D880462A25B9AB00555693 /* MianoApp.swift */,
 				45D880B62A26079500555693 /* SharedComponents */,
+				45D880BC2A260FCB00555693 /* VocalTrack */,
 				45D880B12A26075000555693 /* NoiseGenerator */,
 				45D880A92A25F76500555693 /* MiniTuner */,
 				45D880802A25E79700555693 /* MiniDrum */,
@@ -270,6 +275,15 @@
 			path = SharedComponents;
 			sourceTree = "<group>";
 		};
+		45D880BC2A260FCB00555693 /* VocalTrack */ = {
+			isa = PBXGroup;
+			children = (
+				45D880BD2A260FD900555693 /* VocalTrack.swift */,
+				45D880BF2A26103C00555693 /* VocalTractConductor.swift */,
+			);
+			path = VocalTrack;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -378,7 +392,9 @@
 				45D8807A2A25C20E00555693 /* EXSConductor.swift in Sources */,
 				45D880772A25C19A00555693 /* CustomKeys.swift in Sources */,
 				45D880A82A25EFF300555693 /* SingleDrumPad.swift in Sources */,
+				45D880C02A26103C00555693 /* VocalTractConductor.swift in Sources */,
 				45D880822A25EA8600555693 /* MiniDrumPad.swift in Sources */,
+				45D880BE2A260FD900555693 /* VocalTrack.swift in Sources */,
 				45D880AB2A25F7E000555693 /* TunerConductor.swift in Sources */,
 				45D880472A25B9AB00555693 /* MianoApp.swift in Sources */,
 			);
