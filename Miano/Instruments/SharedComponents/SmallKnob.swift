@@ -11,10 +11,8 @@ import SwiftUI
 /// Knob in which you start by tapping in its bound and change the value by either horizontal or vertical motion
 public struct SmallKnob: View {
     @Binding var value: Float
-    var range: ClosedRange<Float> = 0.0 ... 1.0
 
-    var backgroundColor: Color = .white
-    var foregroundColor: Color = .black.opacity(0.5)
+    var range: ClosedRange<Float> = 0.0 ... 1.0
     var strokeColor: Color = .white.opacity(0.25)
 
     /// Initialize the knob with a bound value and range
@@ -72,24 +70,6 @@ public struct SmallKnob: View {
         .aspectRatio(
             CGSize(width: 1, height: 1), contentMode: .fit
         )
-    }
-}
-
-public extension SmallKnob {
-    /// Modifier to change the background color of the knob
-    /// - Parameter backgroundColor: background color
-    func backgroundColor(_ backgroundColor: Color) -> SmallKnob {
-        var copy = self
-        copy.backgroundColor = backgroundColor
-        return copy
-    }
-
-    /// Modifier to change the foreground color of the knob
-    /// - Parameter foregroundColor: foreground color
-    func foregroundColor(_ foregroundColor: Color) -> SmallKnob {
-        var copy = self
-        copy.foregroundColor = foregroundColor
-        return copy
     }
 }
 

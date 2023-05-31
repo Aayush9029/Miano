@@ -17,7 +17,7 @@ struct MiniSpectrogram: View {
     }
 
     var body: some View {
-        SpectrogramView(audioSpectrogram: audioSpectrogram, .mel)
+        SpectrogramView(audioSpectrogram: audioSpectrogram, mode)
             .environmentObject(audioSpectrogram)
             .onAppear(perform: {
                 audioSpectrogram.startRunning()

@@ -15,8 +15,8 @@ import Tonic
 struct MiniKeyboard: View {
     @Environment(\.controlActiveState) private var controlActiveState
 
-    @State private var layoutType: Int = 0 // 0, 1, 2
-    @State private var pitch: Int = 3 // pitch * 8 = lowest note
+    @State private var layoutType: Float = 0 // 0, 1, 2
+    @State private var octave: Int = 3 // pitch * 8 = lowest note
     @State private var amplitude: Float = 0.25
     @State private var velocity: Float = 0.25
     
@@ -49,11 +49,14 @@ struct MiniKeyboard: View {
                 Spacer()
                 
                 HStack {
-                    SmallKnob(value: $amplitude)
-                        .frame(width: 60)
-                        .shadow(color: .white.opacity(0.125), radius: 12, y: 4)
+                    SmallKnob(
+                        value: $layoutType,
+                        range: 0 ... 0.3
+                    )
+                    .frame(width: 60)
+                    .shadow(color: .white.opacity(0.125), radius: 12, y: 4)
                     
-                    SmallKnob(value: $velocity)
+                    SmallKnob(value: $conductor.velocity)
                         .frame(width: 60)
                         .shadow(color: .white.opacity(0.125), radius: 12, y: 4)
                 }
@@ -75,11 +78,11 @@ struct MiniKeyboard: View {
             }
             HStack {
                 VStack(spacing: 0) {
-                    PitchButton(type: .increase, pitch: $pitch)
+                    OctaveButton(type: .increase, pitch: $octave)
                     
                     Divider().frame(width: 12)
                     
-                    PitchButton(type: .decrease, pitch: $pitch)
+                    OctaveButton(type: .decrease, pitch: $octave)
                 }
                 .labelStyle(.iconOnly)
                 .cornerRadius(12)
@@ -89,8 +92,8 @@ struct MiniKeyboard: View {
                 )
                 
                 CustomKeys(
-                    layoutType: $layoutType,
-                    customPitch: $pitch
+                    layoutFloat: $layoutType,
+                    customPitch: $octave
                 )
                 .background(.gray)
                 
@@ -126,11 +129,19 @@ struct MiniKeyboard: View {
 }
     
 struct KeyboardLayoutChanger: View {
-    @Binding var layoutType: Int
+    @Binding var layoutType: Float
+    var lt: Int {
+        Int(layoutType * 10)
+    }
+
     let setLayout: Int
+    var st: Float {
+        Float(setLayout / 10)
+    }
+    
     let shortcutKey: KeyEquivalent
         
-    init(_ setLayout: Int, binded: Binding<Int>, shortcutKey: KeyEquivalent) {
+    init(_ setLayout: Int, binded: Binding<Float>, shortcutKey: KeyEquivalent) {
         self.setLayout = setLayout
         self._layoutType = binded
         self.shortcutKey = shortcutKey
@@ -139,7 +150,7 @@ struct KeyboardLayoutChanger: View {
     var body: some View {
         Button {
             withAnimation {
-                layoutType = setLayout
+                layoutType = st
             }
             
         } label: {
@@ -147,17 +158,17 @@ struct KeyboardLayoutChanger: View {
                 Circle()
                     .frame(width: 12)
                     .foregroundColor(
-                        layoutType == setLayout ? .green : .clear
+                        lt == setLayout ? .green : .clear
                     )
 
-                    .blur(radius: layoutType == setLayout ? 12 : 0)
+                    .blur(radius: lt == setLayout ? 12 : 0)
                 Circle()
                     .frame(width: 6)
                     .foregroundColor(
-                        layoutType == setLayout ? .green : .white.opacity(0.25)
+                        lt == setLayout ? .green : .white.opacity(0.25)
                     )
                     .shadow(
-                        color: layoutType == setLayout ?
+                        color: lt == setLayout ?
                             .green : .white.opacity(0.25),
                         radius: 12
                     )
@@ -173,18 +184,18 @@ enum PitchType {
     case increase, decrease
 }
     
-struct PitchButton: View {
-    let maxPitch = 9
-    let minPitch = 0
+struct OctaveButton: View {
+    let maxOctave = 9
+    let minOctave = 0
     let type: PitchType
     @Binding var pitch: Int
         
     var inRange: Bool {
         if type == .decrease {
-            return pitch > minPitch
+            return pitch > minOctave
         }
         if type == .increase {
-            return pitch < maxPitch
+            return pitch < maxOctave
         }
         return false
     }
@@ -205,12 +216,12 @@ struct PitchButton: View {
                 Group {
                     if type == .increase {
                         Label(
-                            "Increase Pitch",
+                            "Increase Octave",
                             systemImage: "triangle.fill"
                         )
                     } else {
                         Label(
-                            "Decrease Pitch",
+                            "Decrease Octave",
                             systemImage: "arrowtriangle.down.fill"
                         )
                     }

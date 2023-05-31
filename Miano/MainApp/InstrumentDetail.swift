@@ -5,17 +5,20 @@
 //  Created by Aayush Pokharel on 2023-05-30.
 //
 
+import AVFoundation
 import Colorful
 import SwiftUI
 
 struct InstrumentDetailView: View {
+    @State private var popoverShown: Bool = false
+    @Environment(\.openURL) var openURL
     @Environment(\.openWindow) var openWindow
     @State private var hovering: Bool = false
     let instrument: InstrumentModel
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            ZStack {
+            ZStack(alignment: .topTrailing) {
                 ZStack(alignment: .bottomLeading) {
                     Image(instrument.image)
                         .resizable()
@@ -29,9 +32,9 @@ struct InstrumentDetailView: View {
                                 Text(instrument.emoji)
                                 Text("Launch Instrument")
                             }
-                            .font(hovering ? .largeTitle : .caption)
+                            .font(hovering ? .largeTitle : .callout)
                             .padding(.horizontal, hovering ? 0 : 6)
-                            .frame(maxWidth: hovering ? .infinity : 128, maxHeight: hovering ? .infinity : 24)
+                            .frame(maxWidth: hovering ? .infinity : 180, maxHeight: hovering ? .infinity : 24)
                         }
                         .padding(hovering ? 0 : 4)
                         .background(
@@ -60,6 +63,45 @@ struct InstrumentDetailView: View {
                     }
                     .accessibilityIdentifier("Launch Instrument")
                     .buttonStyle(.plain)
+                }
+
+                if instrument.microphoneUsed {
+                    Label("Microphone Used", systemImage: "mic.fill")
+                        .labelStyle(.iconOnly)
+                        .font(.title2)
+                        .padding(8)
+                        .background(.ultraThinMaterial)
+                        .clipShape(
+                            Circle()
+                        )
+                        .overlay(
+                            Circle()
+                                .stroke(.tertiary, lineWidth: 1)
+                        )
+                        .padding(12)
+                        .containerShape(Circle())
+                        .onTapGesture {
+                            if AVCaptureDevice.authorizationStatus(for: .audio) != .authorized {
+                                openURL(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Microphone")!)
+                            }
+                        }
+                        .onHover { state in
+                            withAnimation {
+                                popoverShown = state
+                            }
+                        }
+                        .popover(isPresented: $popoverShown) {
+                            VStack {
+                                Text("This instrument uses microphone.")
+                                if AVCaptureDevice.authorizationStatus(for: .audio) != .authorized {
+                                    Divider()
+                                    Text("Double click mic icon to open settings\nor\nGo to Settings > Privacy > Microphone > Check **Miano**")
+                                        .multilineTextAlignment(.center)
+                                        .foregroundStyle(.secondary)
+                                }
+                            }
+                            .padding()
+                        }
                 }
             }
             .cornerRadius(12)

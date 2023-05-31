@@ -8,13 +8,8 @@
 import SwiftUI
 
 struct SingleDrumPad: View {
-    @State private var hovering: Bool = false
     let playing: Bool
     let drumpad: DrumSample
-
-    var selected: Bool {
-        return hovering || playing
-    }
 
     var body: some View {
         ZStack {
@@ -44,11 +39,6 @@ struct SingleDrumPad: View {
                 .bold()
                 .foregroundColor(drumpad.color)
                 .brightness(0.5)
-        }
-        .onHover { state in
-            withAnimation {
-                hovering = state
-            }
         }
     }
 }

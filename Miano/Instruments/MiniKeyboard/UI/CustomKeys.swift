@@ -16,7 +16,10 @@ struct CustomKeys: View {
     @EnvironmentObject var conductor: InstrumentEXSConductor
 
     @State var octaveRange = 0
-    @Binding var layoutType: Int
+    @Binding var layoutFloat: Float // 0.1...3 (1, 2, 3)
+    var layoutType: Int {
+        Int(layoutFloat * 10)
+    }
 
     @Binding var customPitch: Int
     var lowestNote: Int {
@@ -50,8 +53,8 @@ struct CustomKeys: View {
 struct CustomKeys_Previews: PreviewProvider {
     static var previews: some View {
         CustomKeys(
-            layoutType: .constant(1),
-            customPitch: .constant(6)
+            layoutFloat: .constant(0.1),
+            customPitch: .constant(2)
         )
         .environmentObject(InstrumentEXSConductor())
     }

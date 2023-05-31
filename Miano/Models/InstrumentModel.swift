@@ -16,7 +16,6 @@ struct InstrumentModel: Identifiable, Equatable {
     let emoji: String
     let tags: [String]
     let microphoneUsed: Bool
-    var launched: Bool = false
     init(
         type: InstrumentType,
         description: String,
@@ -79,11 +78,6 @@ struct InstrumentModel: Identifiable, Equatable {
             tags: ["relaxation", "sound therapy", "sleep aid"]
         )
     ]
-
-    static func getInstrument(_ type: InstrumentType) -> InstrumentModel? {
-        return allInstruments.filter { $0.type == type }.first
-    }
-
     static let firstInstrument: InstrumentModel = .allInstruments.first!
 }
 

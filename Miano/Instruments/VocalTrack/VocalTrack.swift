@@ -113,10 +113,6 @@ public struct ParameterRow: View {
         self.param = param
     }
 
-    func floatToDoubleRange(_ floatRange: ClosedRange<Float>) -> ClosedRange<Double> {
-        Double(floatRange.lowerBound) ... Double(floatRange.upperBound)
-    }
-
     func getBinding() -> Binding<Float> {
         Binding(
             get: { param.value },
