@@ -19,13 +19,19 @@ struct MiniSpectrogram: View {
     var body: some View {
         SpectrogramView(audioSpectrogram: audioSpectrogram, .mel)
             .environmentObject(audioSpectrogram)
-
+            .onAppear(perform: {
+                audioSpectrogram.startRunning()
+            })
             .onChange(of: scenePhase) { phase in
                 if phase == .active {
                     Task(priority: .userInitiated) {
                         audioSpectrogram.startRunning()
                     }
                 }
+            }
+
+            .onReceive(NotificationCenter.default.publisher(for: NSWindow.willCloseNotification)) { _ in
+                audioSpectrogram.stopRunning()
             }
     }
 }

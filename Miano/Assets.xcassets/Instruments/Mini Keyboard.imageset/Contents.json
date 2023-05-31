@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "MiniKeys1.png",
+      "filename" : "Mini Keyboard.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "MiniKeys1@2x.png",
+      "filename" : "Mini Keyboard@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "MiniKeys1@3x.png",
+      "filename" : "Mini Keyboard@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
