@@ -12,6 +12,10 @@ struct MiniSpectrogram: View {
     let audioSpectrogram = AudioSpectrogram()
     let mode: Mode
 
+    init(_ mode: Mode) {
+        self.mode = mode
+    }
+
     var body: some View {
         SpectrogramView(audioSpectrogram: audioSpectrogram, .mel)
             .environmentObject(audioSpectrogram)
@@ -28,6 +32,6 @@ struct MiniSpectrogram: View {
 
 struct MiniSpectrogram_Previews: PreviewProvider {
     static var previews: some View {
-        MiniSpectrogram(mode: .linear)
+        MiniSpectrogram(.linear)
     }
 }

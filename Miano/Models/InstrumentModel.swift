@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InstrumentModel: Identifiable, Equatable {
-    var id: String { image + description }
+    var id: String { name }
     let type: InstrumentType
     let name: String
     let image: String
@@ -16,7 +16,7 @@ struct InstrumentModel: Identifiable, Equatable {
     let emoji: String
     let tags: [String]
     let microphoneUsed: Bool
-
+    var launched: Bool = false
     init(
         type: InstrumentType,
         description: String,
@@ -60,12 +60,12 @@ struct InstrumentModel: Identifiable, Equatable {
             emoji: "🥁",
             tags: ["percussion", "portable", "rhythmic exploration"]
         ),
-        .init(
-            type: .pitchFinder,
-            description: "The Pitch Finder is a handy tool for accurately identifying and analyzing the pitch of a musical note. It provides real-time feedback and precise pitch detection, making it valuable for musicians, vocalists, and music educators. Whether you need to tune an instrument, transcribe melodies, or train your ear, the Pitch Finder offers a reliable solution with its user-friendly interface and accurate results.",
-            emoji: "🔍",
-            tags: ["pitch detection", "music analysis", "ear training"]
-        ),
+//        .init(
+//            type: .pitchFinder,
+//            description: "The Pitch Finder is a handy tool for accurately identifying and analyzing the pitch of a musical note. It provides real-time feedback and precise pitch detection, making it valuable for musicians, vocalists, and music educators. Whether you need to tune an instrument, transcribe melodies, or train your ear, the Pitch Finder offers a reliable solution with its user-friendly interface and accurate results.",
+//            emoji: "🔍",
+//            tags: ["pitch detection", "music analysis", "ear training"]
+//        ),
         .init(
             type: .vocals,
             description: "Vocals refer to the human voice or singing in music. As a vital element in many genres, vocals can convey emotions, tell stories, and add depth to musical compositions. Whether it's a solo performance, harmonies, or layered vocals, the versatility of vocals allows for creative expression and interpretation. From professional singers to amateurs, vocals play a central role in the world of music.",

@@ -56,6 +56,8 @@
 		45D880E32A263B5C00555693 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880E22A263B5C00555693 /* View+Extensions.swift */; };
 		45D880E62A26BA1700555693 /* MiniSpectrogram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880E52A26BA1700555693 /* MiniSpectrogram.swift */; };
 		45D880E92A26C9FD00555693 /* Colorful in Frameworks */ = {isa = PBXBuildFile; productRef = 45D880E82A26C9FD00555693 /* Colorful */; };
+		45D880EB2A26CE0400555693 /* Haptics+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880EA2A26CE0400555693 /* Haptics+Extensions.swift */; };
+		45D880ED2A26DF3800555693 /* DrumsConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880EC2A26DF3800555693 /* DrumsConductor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +125,8 @@
 		45D880DF2A26352B00555693 /* InstrumentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentDetail.swift; sourceTree = "<group>"; };
 		45D880E22A263B5C00555693 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		45D880E52A26BA1700555693 /* MiniSpectrogram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniSpectrogram.swift; sourceTree = "<group>"; };
+		45D880EA2A26CE0400555693 /* Haptics+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Haptics+Extensions.swift"; sourceTree = "<group>"; };
+		45D880EC2A26DF3800555693 /* DrumsConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumsConductor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +252,7 @@
 			children = (
 				45D880812A25EA8600555693 /* MiniDrumPad.swift */,
 				45D880A72A25EFF300555693 /* SingleDrumPad.swift */,
+				45D880EC2A26DF3800555693 /* DrumsConductor.swift */,
 			);
 			path = MiniDrum;
 			sourceTree = "<group>";
@@ -327,14 +332,14 @@
 			path = "MIDI Files";
 			sourceTree = "<group>";
 		};
-		45D880C92A261A1200555693 /* MiniSectrogram */ = {
+		45D880C92A261A1200555693 /* MiniSpectrogram */ = {
 			isa = PBXGroup;
 			children = (
 				45D880E52A26BA1700555693 /* MiniSpectrogram.swift */,
 				45D880CA2A261A3400555693 /* SpectrogramView.swift */,
 				45D880D32A261B8E00555693 /* SpectrogramKit */,
 			);
-			path = MiniSectrogram;
+			path = MiniSpectrogram;
 			sourceTree = "<group>";
 		};
 		45D880D32A261B8E00555693 /* SpectrogramKit */ = {
@@ -369,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				45D880E22A263B5C00555693 /* View+Extensions.swift */,
+				45D880EA2A26CE0400555693 /* Haptics+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -376,12 +382,12 @@
 		45D880E42A263BB000555693 /* Instruments */ = {
 			isa = PBXGroup;
 			children = (
-				45D880C92A261A1200555693 /* MiniSectrogram */,
 				45D880B62A26079500555693 /* SharedComponents */,
 				45D880C12A26148500555693 /* MidiPlayer */,
+				45D880A92A25F76500555693 /* MiniTuner */,
+				45D880C92A261A1200555693 /* MiniSpectrogram */,
 				45D880BC2A260FCB00555693 /* VocalTrack */,
 				45D880B12A26075000555693 /* NoiseGenerator */,
-				45D880A92A25F76500555693 /* MiniTuner */,
 				45D880802A25E79700555693 /* MiniDrum */,
 				45D8807E2A25E6CF00555693 /* MiniKeyboard */,
 			);
@@ -496,12 +502,14 @@
 				45D880B52A26077B00555693 /* NoiseGeneratorsConductor.swift in Sources */,
 				45D880E32A263B5C00555693 /* View+Extensions.swift in Sources */,
 				45D880CF2A261A8200555693 /* MelSpectrogram.swift in Sources */,
+				45D880ED2A26DF3800555693 /* DrumsConductor.swift in Sources */,
 				45D8807C2A25D62500555693 /* SmallKnob.swift in Sources */,
 				45D880B02A25F83900555693 /* MiniTuner.swift in Sources */,
 				45D880DE2A26350000555693 /* InstrumentsSidebar.swift in Sources */,
 				45D880492A25B9AB00555693 /* MiniKeyboard.swift in Sources */,
 				45D8807A2A25C20E00555693 /* EXSConductor.swift in Sources */,
 				45D880772A25C19A00555693 /* CustomKeys.swift in Sources */,
+				45D880EB2A26CE0400555693 /* Haptics+Extensions.swift in Sources */,
 				45D880A82A25EFF300555693 /* SingleDrumPad.swift in Sources */,
 				45D880CB2A261A3400555693 /* SpectrogramView.swift in Sources */,
 				45D880D02A261A8200555693 /* AudioSpectrogram.swift in Sources */,

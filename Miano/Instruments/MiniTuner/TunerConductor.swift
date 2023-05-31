@@ -48,14 +48,8 @@ class TunerConductor: ObservableObject, HasAudioEngine {
         tappableNodeB = Fader(tappableNodeA)
         tappableNodeC = Fader(tappableNodeB)
         silence = Fader(tappableNodeC, gain: 0)
-        engine.output = silence
 
-        tracker = PitchTap(mic) { pitch, amp in
-            DispatchQueue.main.async {
-                self.update(pitch[0], amp[0])
-            }
-        }
-        tracker.start()
+        start()
     }
 
     func update(_ pitch: AUValue, _ amp: AUValue) {
@@ -86,5 +80,26 @@ class TunerConductor: ObservableObject, HasAudioEngine {
         let octave = Int(log2f(pitch / frequency))
         data.noteNameWithSharps = "\(noteNamesWithSharps[index])\(octave)"
         data.noteNameWithFlats = "\(noteNamesWithFlats[index])\(octave)"
+    }
+
+    // Refreshing the visualizer UI
+    @Published var running: Int = 0
+
+    func start() {
+        engine.output = silence
+        tracker = PitchTap(mic) { pitch, amp in
+            DispatchQueue.main.async {
+                self.update(pitch[0], amp[0])
+            }
+        }
+        tracker.start()
+        running += 1
+        try? engine.start()
+    }
+
+    func stop() {
+        running -= 1
+        engine.stop()
+        tracker.stop()
     }
 }

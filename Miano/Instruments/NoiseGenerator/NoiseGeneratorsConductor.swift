@@ -47,4 +47,17 @@ class NoiseGeneratorsConductor: ObservableObject, HasAudioEngine {
 
         engine.output = mixer
     }
+
+    // Refreshing the visualizer UI
+    @Published var running: Int = 0
+
+    func start() {
+        running += 1
+        try? engine.start()
+    }
+
+    func stop() {
+        running -= 1
+        engine.stop()
+    }
 }

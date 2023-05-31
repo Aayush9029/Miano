@@ -35,4 +35,17 @@ class InstrumentEXSConductor: ObservableObject, HasAudioEngine {
             Log("AudioKit did not start!")
         }
     }
+
+    // Refreshing the visualizer UI
+    @Published var running: Int = 0
+
+    func start() {
+        running += 1
+        try? engine.start()
+    }
+
+    func stop() {
+        running -= 1
+        engine.stop()
+    }
 }

@@ -13,21 +13,8 @@ import Combine
 import SoundpipeAudioKit
 import SwiftUI
 
-struct Button2: View {
-    var text: String
-    var onTap: () -> Void
-
-    var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 10).foregroundColor(.gray)
-            Text(text).onTapGesture {
-                self.onTap()
-            }
-        }
-    }
-}
-
 struct VocalTractView: View {
+    @Environment(\.controlActiveState) private var controlActiveState
     @StateObject var conductor = VocalTractConductor()
 
     var body: some View {
@@ -80,15 +67,21 @@ struct VocalTractView: View {
             }.frame(height: 150)
             NodeOutputView(conductor.voc)
                 .padding(.horizontal, -12)
+                .id(conductor.isPlaying)
         }
         .padding()
         .background(.black)
         .ignoresSafeArea()
         .frame(minHeight: 300)
-        .onAppear {
-            conductor.start()
+
+        .onChange(of: controlActiveState) { phase in
+            if phase == .active || phase == .key {
+                conductor.start()
+            }
         }
-        .onDisappear {
+        .onReceive(NotificationCenter.default.publisher(for: NSWindow.willCloseNotification)) { _ in
+            print("close")
+            conductor.isPlaying = false
             conductor.stop()
         }
     }

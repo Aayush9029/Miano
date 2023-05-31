@@ -1,20 +1,19 @@
 /*
-See the LICENSE.txt file for this sample’s licensing information.
+ See the LICENSE.txt file for this sample’s licensing information.
 
-Abstract:
-The AudioSpectrogram extension for AVFoundation support.
-*/
+ Abstract:
+ The AudioSpectrogram extension for AVFoundation support.
+ */
 
 import AVFoundation
 
 // MARK: AVCaptureAudioDataOutputSampleBufferDelegate and AVFoundation Support
 
 extension AudioSpectrogram: AVCaptureAudioDataOutputSampleBufferDelegate {
- 
     public func captureOutput(_ output: AVCaptureOutput,
                               didOutput sampleBuffer: CMSampleBuffer,
-                              from connection: AVCaptureConnection) {
-
+                              from connection: AVCaptureConnection)
+    {
         var audioBufferList = AudioBufferList()
         var blockBuffer: CMBlockBuffer?
   
@@ -86,18 +85,18 @@ extension AudioSpectrogram: AVCaptureAudioDataOutputSampleBufferDelegate {
         // Access in the Resource Access category of Hardened Runtime.
         switch AVCaptureDevice.authorizationStatus(for: .audio) {
             case .authorized:
-                    break
+                break
             case .notDetermined:
                 sessionQueue.suspend()
                 AVCaptureDevice.requestAccess(for: .audio,
                                               completionHandler: { granted in
-                    if !granted {
-                        fatalError("App requires microphone access.")
-                    } else {
-                        self.configureCaptureSession()
-                        self.sessionQueue.resume()
-                    }
-                })
+                                                  if !granted {
+                                                      fatalError("App requires microphone access.")
+                                                  } else {
+                                                      self.configureCaptureSession()
+                                                      self.sessionQueue.resume()
+                                                  }
+                                              })
                 return
             default:
                 // Users can add authorization by choosing Settings > Privacy >
@@ -116,7 +115,8 @@ extension AudioSpectrogram: AVCaptureAudioDataOutputSampleBufferDelegate {
             AVFormatIDKey: kAudioFormatLinearPCM,
             AVLinearPCMIsFloatKey: false,
             AVLinearPCMBitDepthKey: 16,
-            AVNumberOfChannelsKey: 1]
+            AVNumberOfChannelsKey: 1,
+        ]
         #endif
         
         if captureSession.canAddOutput(audioOutput) {
@@ -129,8 +129,9 @@ extension AudioSpectrogram: AVCaptureAudioDataOutputSampleBufferDelegate {
             let microphone = AVCaptureDevice.default(.builtInMicrophone,
                                                      for: .audio,
                                                      position: .unspecified),
-            let microphoneInput = try? AVCaptureDeviceInput(device: microphone) else {
-                fatalError("Can't create microphone.")
+            let microphoneInput = try? AVCaptureDeviceInput(device: microphone)
+        else {
+            fatalError("Can't create microphone.")
         }
         
         if captureSession.canAddInput(microphoneInput) {

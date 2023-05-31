@@ -9,6 +9,7 @@ import Colorful
 import SwiftUI
 
 struct InstrumentDetailView: View {
+    @Environment(\.openWindow) var openWindow
     @State private var hovering: Bool = false
     let instrument: InstrumentModel
 
@@ -19,38 +20,46 @@ struct InstrumentDetailView: View {
                     Image(instrument.image)
                         .resizable()
                         .scaledToFill()
-                    VStack {
-                        HStack {
-                            Text(instrument.emoji)
-                            Text("Launch Instrument")
+                    Button {
+                        print("launching \(instrument.name)")
+                        openWindow(id: instrument.name)
+                    } label: {
+                        VStack {
+                            HStack {
+                                Text(instrument.emoji)
+                                Text("Launch Instrument")
+                            }
+                            .font(hovering ? .largeTitle : .caption)
+                            .padding(.horizontal, hovering ? 0 : 6)
+                            .frame(maxWidth: hovering ? .infinity : 128, maxHeight: hovering ? .infinity : 24)
                         }
-                        .font(hovering ? .largeTitle : .caption)
-                        .padding(.horizontal, hovering ? 0 : 6)
-                        .frame(maxWidth: hovering ? .infinity : 128, maxHeight: hovering ? .infinity : 24)
-                    }
-                    .padding(hovering ? 0 : 4)
-                    .background(
-                        ColorfulView(animated: hovering, animation: .easeInOut(duration: 2))
-                            .blendMode(.color)
-                    )
-                    .background(.ultraThinMaterial)
-                    .clipShape(
-                        RoundedRectangle(cornerRadius: hovering ? 12 : 32)
-                    )
-                    .overlay(
-                        RoundedRectangle(cornerRadius: hovering ? 12 : 32)
-                            .stroke(hovering ? .primary : .tertiary, lineWidth: hovering ? 2 : 1)
-                            .shadow(color: .white.opacity(hovering ? 1 : 0), radius: 16)
-                    )
+                        .padding(hovering ? 0 : 4)
+                        .background(
+                            ColorfulView(animated: hovering, animation: .easeInOut(duration: 2))
+                                .blendMode(.color)
+                        )
+                        .background(.ultraThinMaterial)
+                        .clipShape(
+                            RoundedRectangle(cornerRadius: hovering ? 12 : 32)
+                        )
+                        .overlay(
+                            RoundedRectangle(cornerRadius: hovering ? 12 : 32)
+                                .stroke(hovering ? .primary : .secondary, lineWidth: hovering ? 2 : 1)
+                                .shadow(color: .white.opacity(hovering ? 1 : 0), radius: 16)
+                        )
 
-                    .padding(hovering ? 0 : 12)
-                    .contentShape(RoundedRectangle(cornerRadius: 12))
+                        .padding(hovering ? 0 : 12)
+                        .contentShape(RoundedRectangle(cornerRadius: 12))
 
-                    .onHover { state in
-                        withAnimation {
-                            hovering = state
+                        .onHover { state in
+                            withAnimation(.easeIn(duration: 0.12)) {
+                                hovering = state
+                                performHapticFeedback(hovering ? .levelChange : .generic)
+                            }
                         }
                     }
+                    .accessibilityIdentifier("Launch Instrument")
+                    .buttonStyle(.plain)
                 }
             }
             .cornerRadius(12)
@@ -91,11 +100,6 @@ struct InstrumentDetailView: View {
         .padding([.horizontal, .top])
         .background(.black)
         .frame(minWidth: 320)
-        .toolbar {
-            ToolbarItem {
-                Label("Open Window", systemImage: "macwindow.on.rectangle")
-            }
-        }
     }
 }
 

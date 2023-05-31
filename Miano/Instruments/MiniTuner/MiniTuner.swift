@@ -13,12 +13,15 @@ import SoundpipeAudioKit
 import SwiftUI
 
 struct MiniTuner: View {
+    @Environment(\.controlActiveState) private var controlActiveState
     @StateObject var conductor = TunerConductor()
+    
     var body: some View {
         VStack {
             VStack {
                 ZStack {
                     NodeFFTView(conductor.tappableNodeC)
+                        .id(conductor.running)
                         .blur(radius: 12)
                         .hueRotation(Angle(degrees: Double(conductor.tracker.amplitude) * 50))
                         .ignoresSafeArea()
@@ -72,8 +75,10 @@ struct MiniTuner: View {
                 }
 
                 NodeRollingView(conductor.tappableNodeA)
+                    .id(conductor.running)
 
                 NodeRollingView(conductor.tappableNodeB)
+                    .id(conductor.running)
             }
             InputDevicePicker(device: conductor.initialDevice)
                 .padding()
@@ -84,8 +89,15 @@ struct MiniTuner: View {
         .onAppear {
             conductor.start()
         }
-        .onDisappear {
+        .onReceive(NotificationCenter.default.publisher(for: NSWindow.willCloseNotification)) { _ in
+            print("close")
             conductor.stop()
+        }
+
+        .onChange(of: controlActiveState) { phase in
+            if phase == .active || phase == .key {
+                conductor.start()
+            }
         }
     }
 }

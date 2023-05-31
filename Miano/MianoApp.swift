@@ -15,5 +15,55 @@ struct MianoApp: App {
         }
         .windowStyle(.hiddenTitleBar)
         .windowResizability(.contentSize)
+
+//        MARK: - Instrument Windows
+
+        Window(.linearSpectrogram) {
+            MiniSpectrogram(.linear)
+        }
+        .windowStyle(.hiddenTitleBar)
+        .windowResizability(.contentSize)
+
+        Window(.melSpectrogram) {
+            MiniSpectrogram(.mel)
+        }
+        .windowStyle(.hiddenTitleBar)
+        .windowResizability(.contentSize)
+
+        Window(.miniDrums) {
+            MiniDrumPad()
+        }
+        .windowStyle(.hiddenTitleBar)
+        .windowResizability(.contentSize)
+
+        Window(.miniKeyboard) {
+            MiniKeyboard()
+        }
+        .windowStyle(.hiddenTitleBar)
+        .windowResizability(.contentSize)
+
+        Window(.pitchFinder) {
+            MiniTuner()
+        }
+        .windowStyle(.hiddenTitleBar)
+        .windowResizability(.contentSize)
+
+        Window(.vocals) {
+            VocalTractView()
+        }
+        .windowStyle(.hiddenTitleBar)
+        .windowResizability(.contentSize)
+
+        Window(.whiteNoise) {
+            NoiseGenerator()
+        }
+        .windowStyle(.hiddenTitleBar)
+        .windowResizability(.contentSize)
+    }
+}
+
+internal extension Window {
+    init(_ instrument: InstrumentType, @ViewBuilder content: () -> Content) {
+        self.init(instrument.rawValue, id: instrument.rawValue, content: content)
     }
 }

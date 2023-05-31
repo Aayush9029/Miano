@@ -14,6 +14,7 @@ import SoundpipeAudioKit
 import SwiftUI
 
 struct NoiseGenerator: View {
+    @Environment(\.controlActiveState) private var controlActiveState
     @StateObject var conductor = NoiseGeneratorsConductor()
 
     var body: some View {
@@ -46,6 +47,7 @@ struct NoiseGenerator: View {
                 }
             }
             NodeOutputView(conductor.mixer)
+                .id(conductor.running)
                 .padding(.horizontal, -24)
                 .ignoresSafeArea()
         }
@@ -56,8 +58,15 @@ struct NoiseGenerator: View {
         .onAppear {
             conductor.start()
         }
-        .onDisappear {
+        .onReceive(NotificationCenter.default.publisher(for: NSWindow.willCloseNotification)) { _ in
+            print("close")
             conductor.stop()
+        }
+
+        .onChange(of: controlActiveState) { phase in
+            if phase == .active || phase == .key {
+                conductor.start()
+            }
         }
     }
 }

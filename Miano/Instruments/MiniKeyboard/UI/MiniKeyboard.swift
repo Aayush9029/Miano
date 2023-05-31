@@ -13,6 +13,8 @@ import SwiftUI
 import Tonic
 
 struct MiniKeyboard: View {
+    @Environment(\.controlActiveState) private var controlActiveState
+
     @State private var layoutType: Int = 0 // 0, 1, 2
     @State private var pitch: Int = 3 // pitch * 8 = lowest note
     @State private var amplitude: Float = 0.25
@@ -31,6 +33,7 @@ struct MiniKeyboard: View {
                             .font(.caption)
                             .foregroundColor(.white.opacity(0.5))
                     }
+                    .padding(.vertical)
                     
                     HStack {
                         KeyboardLayoutChanger(0, binded: $layoutType, shortcutKey: "1")
@@ -56,6 +59,7 @@ struct MiniKeyboard: View {
                 }
                 
                 NodeOutputView(conductor.instrument)
+                    .id(conductor.running)
                     .overlay(content: {
                         Color.blue.opacity(0.5)
                             .blendMode(.color)
@@ -108,6 +112,16 @@ struct MiniKeyboard: View {
         )
         .ignoresSafeArea()
         .frame(maxWidth: 720, maxHeight: 280)
+        
+        .onChange(of: controlActiveState) { phase in
+            if phase == .active || phase == .key {
+                conductor.start()
+            }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: NSWindow.willCloseNotification)) { _ in
+            print("close")
+            conductor.stop()
+        }
     }
 }
     

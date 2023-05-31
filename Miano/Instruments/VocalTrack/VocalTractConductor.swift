@@ -13,7 +13,6 @@ import Combine
 import SoundpipeAudioKit
 import SwiftUI
 
-
 class VocalTractConductor: ObservableObject, HasAudioEngine {
     let engine = AudioEngine()
 

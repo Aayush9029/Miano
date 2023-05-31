@@ -7,6 +7,7 @@
 
 import Accelerate
 import AVFoundation
+import Cocoa
 import Combine
 
 /// An enumeration that specifies the drum loop provider's mode.
@@ -195,8 +196,6 @@ class AudioSpectrogram: NSObject, ObservableObject {
         return rgbImageBuffer.makeCGImage(cgImageFormat: rgbImageFormat) ?? AudioSpectrogram.emptyCGImage
     }
 }
-
-import Cocoa
 
 // MARK: Utility functions
 

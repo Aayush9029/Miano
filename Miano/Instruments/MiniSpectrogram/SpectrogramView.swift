@@ -32,7 +32,7 @@ struct SpectrogramView: View {
                             .font(.caption)
                             .foregroundColor(.white.opacity(0.5))
                     }
-                    .padding()
+                    .padding(.vertical)
                     Spacer()
                     VStack {
                         HStack {
