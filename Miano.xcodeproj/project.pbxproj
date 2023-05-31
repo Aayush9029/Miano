@@ -54,6 +54,8 @@
 		45D880DE2A26350000555693 /* InstrumentsSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880DD2A26350000555693 /* InstrumentsSidebar.swift */; };
 		45D880E02A26352B00555693 /* InstrumentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880DF2A26352B00555693 /* InstrumentDetail.swift */; };
 		45D880E32A263B5C00555693 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880E22A263B5C00555693 /* View+Extensions.swift */; };
+		45D880E62A26BA1700555693 /* MiniSpectrogram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880E52A26BA1700555693 /* MiniSpectrogram.swift */; };
+		45D880E92A26C9FD00555693 /* Colorful in Frameworks */ = {isa = PBXBuildFile; productRef = 45D880E82A26C9FD00555693 /* Colorful */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +122,7 @@
 		45D880DD2A26350000555693 /* InstrumentsSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentsSidebar.swift; sourceTree = "<group>"; };
 		45D880DF2A26352B00555693 /* InstrumentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentDetail.swift; sourceTree = "<group>"; };
 		45D880E22A263B5C00555693 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		45D880E52A26BA1700555693 /* MiniSpectrogram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniSpectrogram.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,7 @@
 			files = (
 				45D8805D2A25BE7D00555693 /* AudioKit in Frameworks */,
 				45D880AE2A25F81B00555693 /* SoundpipeAudioKit in Frameworks */,
+				45D880E92A26C9FD00555693 /* Colorful in Frameworks */,
 				45D880852A25EAA300555693 /* AudioKitEX in Frameworks */,
 				45D880752A25C0F700555693 /* AudioKitUI in Frameworks */,
 				45D880582A25BAD700555693 /* Keyboard in Frameworks */,
@@ -326,6 +330,7 @@
 		45D880C92A261A1200555693 /* MiniSectrogram */ = {
 			isa = PBXGroup;
 			children = (
+				45D880E52A26BA1700555693 /* MiniSpectrogram.swift */,
 				45D880CA2A261A3400555693 /* SpectrogramView.swift */,
 				45D880D32A261B8E00555693 /* SpectrogramKit */,
 			);
@@ -405,6 +410,7 @@
 				45D880742A25C0F700555693 /* AudioKitUI */,
 				45D880842A25EAA300555693 /* AudioKitEX */,
 				45D880AD2A25F81B00555693 /* SoundpipeAudioKit */,
+				45D880E82A26C9FD00555693 /* Colorful */,
 			);
 			productName = Miano;
 			productReference = 45D880432A25B9AB00555693 /* Miano.app */;
@@ -440,6 +446,7 @@
 				45D880732A25C0F700555693 /* XCRemoteSwiftPackageReference "AudioKitUI" */,
 				45D880832A25EAA300555693 /* XCRemoteSwiftPackageReference "AudioKitEX" */,
 				45D880AC2A25F81B00555693 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */,
+				45D880E72A26C9FD00555693 /* XCRemoteSwiftPackageReference "Colorful" */,
 			);
 			productRefGroup = 45D880442A25B9AB00555693 /* Products */;
 			projectDirPath = "";
@@ -505,6 +512,7 @@
 				45D880BE2A260FD900555693 /* VocalTrack.swift in Sources */,
 				45D880AB2A25F7E000555693 /* TunerConductor.swift in Sources */,
 				45D880472A25B9AB00555693 /* MianoApp.swift in Sources */,
+				45D880E62A26BA1700555693 /* MiniSpectrogram.swift in Sources */,
 				45D880DC2A262B7600555693 /* InstrumentModel.swift in Sources */,
 				45D880D92A262A0B00555693 /* InstrumentSelection.swift in Sources */,
 			);
@@ -746,6 +754,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		45D880E72A26C9FD00555693 /* XCRemoteSwiftPackageReference "Colorful" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Lakr233/Colorful.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -773,6 +789,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 45D880AC2A25F81B00555693 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */;
 			productName = SoundpipeAudioKit;
+		};
+		45D880E82A26C9FD00555693 /* Colorful */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45D880E72A26C9FD00555693 /* XCRemoteSwiftPackageReference "Colorful" */;
+			productName = Colorful;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

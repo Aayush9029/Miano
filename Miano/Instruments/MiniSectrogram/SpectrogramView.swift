@@ -59,7 +59,7 @@ struct SpectrogramView: View {
                 .padding()
             }
         }
-        .frame(minWidth: 640, minHeight: 320)
+        .frame(minWidth: 640, minHeight: 180)
         .background(.black)
         .ignoresSafeArea()
     }

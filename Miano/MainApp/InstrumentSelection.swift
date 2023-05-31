@@ -20,6 +20,8 @@ struct InstrumentSelection: View {
         } detail: {
             InstrumentDetailView(instrument: selectedInstrument)
         }
+        .frame(minWidth: 540, minHeight: 480)
+        
     }
 }
 
@@ -74,7 +76,7 @@ struct SingleInstrumentSelector: View {
                 }
             }
         }
-        .padding(4)
+        .padding(2)
         .containerShape(RoundedRectangle(cornerRadius: 12))
         .onTapGesture {
             selectedInstrument = instrument

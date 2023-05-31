@@ -80,6 +80,10 @@ struct InstrumentModel: Identifiable, Equatable {
         )
     ]
 
+    static func getInstrument(_ type: InstrumentType) -> InstrumentModel? {
+        return allInstruments.filter { $0.type == type }.first
+    }
+
     static let firstInstrument: InstrumentModel = .allInstruments.first!
 }
 

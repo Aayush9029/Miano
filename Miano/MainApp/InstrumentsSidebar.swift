@@ -25,13 +25,14 @@ struct InstrumentsSidebar: View {
                         .font(.caption)
                         .foregroundColor(.white.opacity(0.5))
                 }
-                LazyVGrid(columns: columns) {
+                LazyVGrid(columns: columns, spacing: 0) {
                     ForEach(InstrumentModel.allInstruments) { instrument in
                         SingleInstrumentSelector(selectedInstrument: $selected, instrument: instrument)
                     }
+                    .padding(.bottom)
                 }
             }
-            .cornerRadius(12)
+            .roundedCorners(radius: 12, corners: .top)
             .padding([.horizontal, .top])
 
         }.frame(minWidth: 200)
