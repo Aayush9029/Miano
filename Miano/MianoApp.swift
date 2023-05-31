@@ -42,11 +42,11 @@ struct MianoApp: App {
         .windowStyle(.hiddenTitleBar)
         .windowResizability(.contentSize)
 
-        Window(.pitchFinder) {
-            MiniTuner()
-        }
-        .windowStyle(.hiddenTitleBar)
-        .windowResizability(.contentSize)
+//        Window(.pitchFinder) {
+//            MiniTuner()
+//        }
+//        .windowStyle(.hiddenTitleBar)
+//        .windowResizability(.contentSize)
 
         Window(.vocals) {
             VocalTractView()

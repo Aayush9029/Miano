@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45812D792A2732030028FCCB /* cheeb-snr.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45D880722A25BF8400555693 /* cheeb-snr.wav */; };
+		45812D7B2A27320C0028FCCB /* cheeb-ch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45D880672A25BF8400555693 /* cheeb-ch.wav */; };
+		45812D7C2A27320F0028FCCB /* cheeb-bd.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45D880692A25BF8400555693 /* cheeb-bd.wav */; };
+		45812D822A27321B0028FCCB /* cheeb-hat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45D880642A25BF8400555693 /* cheeb-hat.wav */; };
+		45812D832A27321B0028FCCB /* saw220-ana1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45D880632A25BF8400555693 /* saw220-ana1.wav */; };
+		45812D842A27321B0028FCCB /* saw220.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45D880612A25BF8400555693 /* saw220.wav */; };
+		45812D852A27321B0028FCCB /* noise-wht2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45D880602A25BF8400555693 /* noise-wht2.wav */; };
+		45812D862A27321B0028FCCB /* sqr220.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45D880622A25BF8400555693 /* sqr220.wav */; };
 		45D880472A25B9AB00555693 /* MianoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880462A25B9AB00555693 /* MianoApp.swift */; };
 		45D880492A25B9AB00555693 /* MiniKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880482A25B9AB00555693 /* MiniKeyboard.swift */; };
 		45D8804E2A25B9AC00555693 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45D8804D2A25B9AC00555693 /* Preview Assets.xcassets */; };
@@ -19,32 +27,21 @@
 		45D8807D2A25DAC600555693 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45D8804A2A25B9AC00555693 /* Assets.xcassets */; };
 		45D880822A25EA8600555693 /* MiniDrumPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880812A25EA8600555693 /* MiniDrumPad.swift */; };
 		45D880852A25EAA300555693 /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = 45D880842A25EAA300555693 /* AudioKitEX */; };
-		45D880972A25ECE600555693 /* Strings.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45D8808B2A25EBA400555693 /* Strings.mp3 */; };
 		45D880982A25ECE600555693 /* mid_tom_B1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45D8808D2A25EBA400555693 /* mid_tom_B1.wav */; };
-		45D880992A25ECE600555693 /* beat.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 45D8808E2A25EBA400555693 /* beat.aiff */; };
 		45D8809A2A25ECE600555693 /* snare_D1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45D880962A25EBA400555693 /* snare_D1.wav */; };
 		45D8809B2A25ECE600555693 /* open_hi_hat_A#1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45D880942A25EBA400555693 /* open_hi_hat_A#1.wav */; };
-		45D8809C2A25ECE600555693 /* Guitar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45D880872A25EBA400555693 /* Guitar.mp3 */; };
 		45D8809D2A25ECE600555693 /* closed_hi_hat_F#1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45D880902A25EBA400555693 /* closed_hi_hat_F#1.wav */; };
 		45D8809E2A25ECE600555693 /* clap_D#1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45D880882A25EBA400555693 /* clap_D#1.wav */; };
 		45D8809F2A25ECE600555693 /* hi_tom_D2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45D8808A2A25EBA400555693 /* hi_tom_D2.wav */; };
-		45D880A02A25ECE600555693 /* alphabet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45D8808C2A25EBA400555693 /* alphabet.mp3 */; };
 		45D880A12A25ECE600555693 /* lo_tom_F1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45D880922A25EBA400555693 /* lo_tom_F1.wav */; };
 		45D880A22A25ECE600555693 /* Bass Synth.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45D880892A25EBA400555693 /* Bass Synth.mp3 */; };
-		45D880A32A25ECE600555693 /* Synth.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45D8808F2A25EBA400555693 /* Synth.mp3 */; };
-		45D880A42A25ECE600555693 /* Counting.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45D880952A25EBA400555693 /* Counting.mp3 */; };
 		45D880A52A25ECE600555693 /* bass_drum_C1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45D880912A25EBA400555693 /* bass_drum_C1.wav */; };
-		45D880A62A25ECE600555693 /* Piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45D880932A25EBA400555693 /* Piano.mp3 */; };
 		45D880A82A25EFF300555693 /* SingleDrumPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880A72A25EFF300555693 /* SingleDrumPad.swift */; };
-		45D880AB2A25F7E000555693 /* TunerConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880AA2A25F7E000555693 /* TunerConductor.swift */; };
 		45D880AE2A25F81B00555693 /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 45D880AD2A25F81B00555693 /* SoundpipeAudioKit */; };
-		45D880B02A25F83900555693 /* MiniTuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880AF2A25F83900555693 /* MiniTuner.swift */; };
 		45D880B32A26076E00555693 /* NoiseGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880B22A26076E00555693 /* NoiseGenerator.swift */; };
 		45D880B52A26077B00555693 /* NoiseGeneratorsConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880B42A26077B00555693 /* NoiseGeneratorsConductor.swift */; };
 		45D880BE2A260FD900555693 /* VocalTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880BD2A260FD900555693 /* VocalTrack.swift */; };
 		45D880C02A26103C00555693 /* VocalTractConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880BF2A26103C00555693 /* VocalTractConductor.swift */; };
-		45D880C72A2614DF00555693 /* Demo.mid in Resources */ = {isa = PBXBuildFile; fileRef = 45D880C52A2614B800555693 /* Demo.mid */; };
-		45D880C82A2614DF00555693 /* 4tracks.mid in Resources */ = {isa = PBXBuildFile; fileRef = 45D880C62A2614B800555693 /* 4tracks.mid */; };
 		45D880CB2A261A3400555693 /* SpectrogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880CA2A261A3400555693 /* SpectrogramView.swift */; };
 		45D880CF2A261A8200555693 /* MelSpectrogram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880CC2A261A8200555693 /* MelSpectrogram.swift */; };
 		45D880D02A261A8200555693 /* AudioSpectrogram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D880CE2A261A8200555693 /* AudioSpectrogram.swift */; };
@@ -75,7 +72,6 @@
 		45D880652A25BF8400555693 /* cheeb-stick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "cheeb-stick.wav"; sourceTree = "<group>"; };
 		45D880662A25BF8400555693 /* sqr.SFZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = sqr.SFZ; sourceTree = "<group>"; };
 		45D880672A25BF8400555693 /* cheeb-ch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "cheeb-ch.wav"; sourceTree = "<group>"; };
-		45D880682A25BF8400555693 /* closed_hi_hat_F#1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "closed_hi_hat_F#1.wav"; sourceTree = "<group>"; };
 		45D880692A25BF8400555693 /* cheeb-bd.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "cheeb-bd.wav"; sourceTree = "<group>"; };
 		45D8806B2A25BF8400555693 /* sawPiano1.exs */ = {isa = PBXFileReference; lastKnownFileType = file; path = sawPiano1.exs; sourceTree = "<group>"; };
 		45D8806C2A25BF8400555693 /* funkyWow.exs */ = {isa = PBXFileReference; lastKnownFileType = file; path = funkyWow.exs; sourceTree = "<group>"; };
@@ -196,7 +192,6 @@
 				45D880652A25BF8400555693 /* cheeb-stick.wav */,
 				45D880662A25BF8400555693 /* sqr.SFZ */,
 				45D880672A25BF8400555693 /* cheeb-ch.wav */,
-				45D880682A25BF8400555693 /* closed_hi_hat_F#1.wav */,
 				45D880692A25BF8400555693 /* cheeb-bd.wav */,
 				45D8806A2A25BF8400555693 /* Sampler Instruments */,
 				45D880722A25BF8400555693 /* cheeb-snr.wav */,
@@ -468,24 +463,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45812D792A2732030028FCCB /* cheeb-snr.wav in Resources */,
 				45D8807D2A25DAC600555693 /* Assets.xcassets in Resources */,
-				45D880A42A25ECE600555693 /* Counting.mp3 in Resources */,
 				45D8809D2A25ECE600555693 /* closed_hi_hat_F#1.wav in Resources */,
-				45D880992A25ECE600555693 /* beat.aiff in Resources */,
 				45D880A12A25ECE600555693 /* lo_tom_F1.wav in Resources */,
 				45D880982A25ECE600555693 /* mid_tom_B1.wav in Resources */,
+				45812D852A27321B0028FCCB /* noise-wht2.wav in Resources */,
 				45D8804E2A25B9AC00555693 /* Preview Assets.xcassets in Resources */,
+				45812D842A27321B0028FCCB /* saw220.wav in Resources */,
 				45D8809E2A25ECE600555693 /* clap_D#1.wav in Resources */,
-				45D8809C2A25ECE600555693 /* Guitar.mp3 in Resources */,
-				45D880A32A25ECE600555693 /* Synth.mp3 in Resources */,
-				45D880A02A25ECE600555693 /* alphabet.mp3 in Resources */,
-				45D880C82A2614DF00555693 /* 4tracks.mid in Resources */,
 				45D8809F2A25ECE600555693 /* hi_tom_D2.wav in Resources */,
-				45D880A62A25ECE600555693 /* Piano.mp3 in Resources */,
 				45D880A52A25ECE600555693 /* bass_drum_C1.wav in Resources */,
-				45D880C72A2614DF00555693 /* Demo.mid in Resources */,
-				45D880972A25ECE600555693 /* Strings.mp3 in Resources */,
+				45812D862A27321B0028FCCB /* sqr220.wav in Resources */,
+				45812D822A27321B0028FCCB /* cheeb-hat.wav in Resources */,
+				45812D7C2A27320F0028FCCB /* cheeb-bd.wav in Resources */,
 				45D880A22A25ECE600555693 /* Bass Synth.mp3 in Resources */,
+				45812D7B2A27320C0028FCCB /* cheeb-ch.wav in Resources */,
+				45812D832A27321B0028FCCB /* saw220-ana1.wav in Resources */,
 				45D8809A2A25ECE600555693 /* snare_D1.wav in Resources */,
 				45D8809B2A25ECE600555693 /* open_hi_hat_A#1.wav in Resources */,
 			);
@@ -504,7 +498,6 @@
 				45D880CF2A261A8200555693 /* MelSpectrogram.swift in Sources */,
 				45D880ED2A26DF3800555693 /* DrumsConductor.swift in Sources */,
 				45D8807C2A25D62500555693 /* SmallKnob.swift in Sources */,
-				45D880B02A25F83900555693 /* MiniTuner.swift in Sources */,
 				45D880DE2A26350000555693 /* InstrumentsSidebar.swift in Sources */,
 				45D880492A25B9AB00555693 /* MiniKeyboard.swift in Sources */,
 				45D8807A2A25C20E00555693 /* EXSConductor.swift in Sources */,
@@ -518,7 +511,6 @@
 				45D880822A25EA8600555693 /* MiniDrumPad.swift in Sources */,
 				45D880E02A26352B00555693 /* InstrumentDetail.swift in Sources */,
 				45D880BE2A260FD900555693 /* VocalTrack.swift in Sources */,
-				45D880AB2A25F7E000555693 /* TunerConductor.swift in Sources */,
 				45D880472A25B9AB00555693 /* MianoApp.swift in Sources */,
 				45D880E62A26BA1700555693 /* MiniSpectrogram.swift in Sources */,
 				45D880DC2A262B7600555693 /* InstrumentModel.swift in Sources */,
@@ -579,7 +571,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -633,7 +625,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -657,6 +649,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "© Aayush Pokharel 2023";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Required to visualize, process and record audio input.";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -686,6 +679,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "© Aayush Pokharel 2023";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Required to visualize, process and record audio input.";
 				LD_RUNPATH_SEARCH_PATHS = (
